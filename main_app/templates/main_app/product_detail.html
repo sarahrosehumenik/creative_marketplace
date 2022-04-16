@@ -6,9 +6,15 @@
 <p>Name: {{ product.name }}</p>
 <p>Caption: {{ product.caption }}</p>
 <p>Description: {{ product.description}}</p>
-<p>Quantity: {{ product.quantity }} </p>
 <p>Price: {{ product.price }}</p>
+<p>Quantity: {{ product.quantity }} </p>
 <p>Likes: {{ product.likes }}</p>
+{% if user.is_authenticated %}
+    <div class="card-action">
+        <a href="{% url 'products_update' product.id %}">Edit</a>
+        <a href="{% url 'products_delete' product.id %}">Delete</a>
+    </div>
+{% endif %}
 
 
 {% endblock %}
