@@ -2,16 +2,13 @@
 {% block content %}   
 
 <h1></h1>
-{% for product in product_list %}
-<a href="{% url 'products_detail' product.id %}">
+
 <p>Name: {{ product.name }}</p>
-</a>
 <p>Caption: {{ product.caption }}</p>
 <p>Description: {{ product.description}}</p>
 <p>Quantity: {{ product.quantity }} </p>
 <p>Price: {{ product.price }}</p>
 <p>Likes: {{ product.likes }}</p>
 
-{% endfor %}
 
 {% endblock %}
