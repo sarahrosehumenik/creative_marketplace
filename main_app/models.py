@@ -13,9 +13,16 @@ class Product(models.Model):
 
     user = models.ForeignKey(User, on_delete= models.CASCADE)
 
+    def get_absolute_url(self):
+       return reverse('products_index')
+
     def __str__(self):
        return self.name
 
+   
+   
+
+   
  
 
 

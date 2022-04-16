@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import ListView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Product
-
 
 # Create your views here.
 def home(request):
@@ -33,3 +34,11 @@ def signup(request):
 class ProductList(ListView): 
     model = Product
     
+class ProductCreate(LoginRequiredMixin,CreateView):
+    model = Product
+    fields = ['name','caption', 'description', 'price', 'quantity']
+
+    def form_valid(self, form):
+      form.instance.user = self.request.user
+      return super().form_valid(form)
+
