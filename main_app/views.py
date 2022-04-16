@@ -46,3 +46,11 @@ class ProductCreate(LoginRequiredMixin,CreateView):
 
 class ProductDetail(DetailView):
     model = Product
+
+class ProductUpdate(LoginRequiredMixin, UpdateView):
+    model = Product
+    fields = ['caption', 'description', 'price', 'quantity'] #allowing quantity updates may cause problems later...
+
+class ProductDelete(LoginRequiredMixin, DeleteView):
+    model = Product
+    success_url = '/products' 
