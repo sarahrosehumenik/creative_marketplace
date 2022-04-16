@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Log In</h1>
+
+<!-- Add the login form -->
+<form method="post" action="{% url 'login' %}">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" class="btn" value="login">
+  <input type="hidden" name="next" value="{{ next }}">
+</form>
+
+{% endblock %}
+
+<!-- this 'next' value is a feature of Django's authentication that will automatically redirect a user that tries to access a protected 
+route back to that route after they log in! Using hidden inputs in forms is a common technique in web apps for providing 
+additional data to the server when the form is submitted. -->
