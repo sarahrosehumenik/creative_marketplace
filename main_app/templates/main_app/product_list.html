@@ -12,6 +12,11 @@
     <p>Quantity: {{ product.quantity }} </p>
     <p>Likes: {{ product.likes }}</p>
 
+    <form action="{% url 'assoc_product' user.id product.id %}" method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn">Add</button>
+    </form>
+
     {% endfor %}
 {% else %}
     <h3>No products yet..</h3>

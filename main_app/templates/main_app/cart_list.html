@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+{% block content %}   
+
+<h1>Cart</h1>
+{% if cart_list %}
+    {% for product in cart_list %}
+    <a href="{% url 'products_detail' product.id %}">
+        <p>Name: {{ product.name }}</p>
+    </a>
+    <p>Price: {{ product.price }}</p>
+    {% endfor %}
+{% else %}
+    <h3>Add products to your cart..</h3>
+{% endif %}
+
+{% endblock %}

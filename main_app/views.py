@@ -1,16 +1,15 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.views.generic import DetailView
+from django.views.generic import DetailView, ListView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
-from django.views.generic import ListView
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Product
+from .models import Product, Cart
 
-# Create your views here.
+# VIEW FUNCTIONS----------------------------------------------------------------------------
 def home(request):
     return render(request, 'home.html')
-
 
 
 def signup(request):
@@ -20,6 +19,7 @@ def signup(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
+            # cart = Cart.objects.create()
             #automatically log in any newly created user
             login(request, user)
             return redirect('home')
@@ -31,7 +31,13 @@ def signup(request):
     context = {'form': form, 'error_message': error_message}
     return render(request, 'registration/signup.html', context)
 
+@login_required
+def assoc_product(request, user_id, product_id):
+    cart = Cart.objects.get(user_id=user_id)
+    cart.products.add(product_id)
+    return redirect('products_index')
 
+#PROTUCT CBVs------------------------------------------------------------------------------
 class ProductList(ListView): 
     model = Product
     
@@ -54,3 +60,8 @@ class ProductUpdate(LoginRequiredMixin, UpdateView):
 class ProductDelete(LoginRequiredMixin, DeleteView):
     model = Product
     success_url = '/products' 
+
+#CART CBVs------------------------------------------------------------------------------
+
+class CartList(LoginRequiredMixin, ListView):
+    model = Cart

@@ -22,7 +22,8 @@
                     <li><a href="/products">Marketplace Feed</a></li>
                     {% if user.is_authenticated %}
                     <li><a href="{% url 'logout' %}">Log Out</a></li>
-                    <li><a href="{% url 'products_create' %}">Create Producy</a></li>
+                    <li><a href="{% url 'cart_index' %}">My Cart</a></li>
+                    <li><a href="{% url 'products_create' %}">Create Product</a></li>
                   {% else %}
                     <li><a href="{% url 'signup' %}">Sign Up</a></li>
                     <li><a href="{% url 'login' %}">Log In</a></li>   

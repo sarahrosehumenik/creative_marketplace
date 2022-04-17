@@ -1,3 +1,4 @@
+from itertools import product
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
@@ -10,7 +11,7 @@ class Product(models.Model):
     price = models.IntegerField(default= 0)
     quantity = models.IntegerField(default= 1)
     likes = models.IntegerField(default= 0)
-
+   
     user = models.ForeignKey(User, on_delete= models.CASCADE)
 
     def get_absolute_url(self):
@@ -18,6 +19,12 @@ class Product(models.Model):
 
     def __str__(self):
        return self.name
+
+class Cart(models.Model):
+
+   products = models.ManyToManyField(Product)
+   
+   user = models.ForeignKey(User, on_delete = models.CASCADE)
 
    
    
