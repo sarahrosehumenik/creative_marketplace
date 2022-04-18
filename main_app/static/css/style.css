@@ -1,14 +1,129 @@
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-  
-  main {
-    flex: 1 0 auto;
-  }
-  
-  footer.page-footer {
-    padding-top: 0;
-    text-align: right;
-  }
+  font-family: "Mulish", sans-serif;
+  background-size: cover;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1/4fr 5fr 1fr;
+  background-color: rgb(255, 255, 255);
+  height: 80%;
+  width: 80%;
+  margin: 3vh auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 11px 1px rgba(49, 35, 23, 0.404);
+}
+
+header {
+  display: block;
+  grid-column: 1 / 4;
+  grid-row: 1;
+  height: 10vh;
+  font-family: "Mulish", sans-serif;
+  text-align: center;
+  padding: 2.5vh 0 1.5vh 0;
+  font-size: 7vh;
+  color: rgb(60, 65, 90);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-family: "Alegreya Sans", sans-serif;
+}
+li {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  margin: 1vh auto;
+  font-family: "Mulish", sans-serif;
+  font-size: 3vh;
+}
+li:hover {
+  background-color: #eeff00;
+}
+
+aside {
+  grid-column: 1;
+  grid-row: 2 / 3;
+  height: 100vh;
+  box-shadow: 0 4px 11px 1px rgba(49, 35, 23, 0.404);
+  border-radius: 15px;
+  margin: 0 2vh 0 4vh;
+
+  background-color: rgba(251, 254, 255, 0.349);
+  font-family: "Mulish", sans-serif;
+}
+
+main {
+  box-shadow: inset 0 0 10px rgba(49, 35, 23, 0.404);
+  grid-column: 2/ 4;
+  grid-row: 2/3;
+
+  background-color: rgba(250, 254, 255, 0.514);
+  font-family: "Mulish", sans-serif;
+  overflow: scroll;
+  height: 100vh;
+  margin: 0 3vh 0 3vh;
+  border-radius: 10px;
+}
+
+img {
+  max-height: 50vh;
+  display: block;
+  margin: 3vh auto;
+  box-shadow: 0 4px 11px 1px rgba(0, 0, 0, 0.15);
+}
+
+footer {
+  height: 15vh;
+  grid-column: 1/ 4;
+  font-family: "Mulish", sans-serif;
+  margin: 3vh;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+
+  border: 1px solid black;
+  margin: 0.5px auto;
+  width: 70%;
+  font-family: "Mulish", sans-serif;
+}
+
+#namelink:hover {
+  background-color: rgb(20, 0, 20);
+  color: white;
+}
+
+#edit,
+#delete {
+  display: flex;
+  justify-content: center;
+  margin: 2vh auto;
+  font-size: 4vh;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  border: 2px solid #eeff00;
+}
+
+textarea {
+  border: 2px solid #eeff00;
+}
+
+.btn {
+  background-color: rgb(161, 125, 70);
+  border: none;
+}
