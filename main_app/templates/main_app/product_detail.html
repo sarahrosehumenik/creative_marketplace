@@ -13,6 +13,10 @@
     
         <a id="edit" href="{% url 'products_update' product.id %}">Edit</a>
         <a id="delete" href="{% url 'products_delete' product.id %}">Delete</a>
+        <form action="{% url 'assoc_product' user.id product.id %}" method="POST">
+                {% csrf_token %}
+                <button type="submit" class="btn">Add</button>
+        </form>
    
 {% endif %}
 

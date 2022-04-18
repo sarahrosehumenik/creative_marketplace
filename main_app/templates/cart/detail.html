@@ -2,8 +2,8 @@
 {% block content %}   
 
 <h1>Cart</h1>
-{% if cart_list.count %}
-    {% for product in cart_list %}
+{% if products.count %}
+    {% for product in products %}
     <a href="{% url 'products_detail' product.id %}">
         <p>Name: {{ product.name }}</p>
     </a>
