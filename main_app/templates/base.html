@@ -29,6 +29,7 @@
       {% if user.is_authenticated %}
       <li><a href="{% url 'logout' %}">Log Out</a></li>
       <li><a href="{% url 'products_create' %}">Create Post</a></li>
+      <li><a href="{% url 'cart_detail' %}">My Cart</a></li>
       {% else %}
       <li><a href="{% url 'signup' %}">Sign Up</a></li>
       <li><a href="{% url 'login' %}">Log In</a></li>
