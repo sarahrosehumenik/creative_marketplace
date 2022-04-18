@@ -2,7 +2,7 @@
 {% block content %}   
 
 <h1></h1>
-
+<img src="https://i.imgur.com/CxK3ehL.jpg">
 <p>Name: {{ product.name }}</p>
 <p>Caption: {{ product.caption }}</p>
 <p>Description: {{ product.description}}</p>
@@ -10,10 +10,10 @@
 <p>Quantity: {{ product.quantity }} </p>
 <p>Likes: {{ product.likes }}</p>
 {% if user.is_authenticated %}
-    <div class="card-action">
-        <a href="{% url 'products_update' product.id %}">Edit</a>
-        <a href="{% url 'products_delete' product.id %}">Delete</a>
-    </div>
+    
+        <a id="edit" href="{% url 'products_update' product.id %}">Edit</a>
+        <a id="delete" href="{% url 'products_delete' product.id %}">Delete</a>
+   
 {% endif %}
 
 
