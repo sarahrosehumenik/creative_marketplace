@@ -110,20 +110,3 @@ h1 {
   text-align: center;
 }
 
-form {
-  display: flex;
-  justify-content: center;
-}
-
-input {
-  border: 2px solid #eeff00;
-}
-
-textarea {
-  border: 2px solid #eeff00;
-}
-
-.btn {
-  background-color: rgb(161, 125, 70);
-  border: none;
-}
