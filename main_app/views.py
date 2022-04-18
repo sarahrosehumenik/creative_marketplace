@@ -19,7 +19,8 @@ def signup(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            # cart = Cart.objects.create()
+            print(f'USER ID!!! {user.id}')
+            cart = Cart.objects.create(user_id=user.id)
             #automatically log in any newly created user
             login(request, user)
             return redirect('home')
@@ -36,6 +37,13 @@ def assoc_product(request, user_id, product_id):
     cart = Cart.objects.get(user_id=user_id)
     cart.products.add(product_id)
     return redirect('products_index')
+
+@login_required
+def cart_detail(request):
+    print(request.user.id)
+    cart = Cart.objects.get(user_id=request.user.id)
+    products = cart.products.all()
+    return render(request, 'cart/detail.html', { 'cart': cart, 'products': products })
 
 #PROTUCT CBVs------------------------------------------------------------------------------
 class ProductList(ListView): 
@@ -63,5 +71,6 @@ class ProductDelete(LoginRequiredMixin, DeleteView):
 
 #CART CBVs------------------------------------------------------------------------------
 
-class CartList(LoginRequiredMixin, ListView):
-    model = Cart
+# class CartList(LoginRequiredMixin, ListView):
+#     model = Cart
+
