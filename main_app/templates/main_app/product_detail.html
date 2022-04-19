@@ -2,7 +2,10 @@
 {% block content %}   
 
 <h1></h1>
-<img src="https://i.imgur.com/62KiQMm.jpg">
+
+<img src="{{ product.photo_file }}">
+
+
 <p>Name: {{ product.name }}</p>
 <p>Caption: {{ product.caption }}</p>
 <p>Description: {{ product.description}}</p>
