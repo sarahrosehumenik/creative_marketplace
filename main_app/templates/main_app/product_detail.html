@@ -2,7 +2,11 @@
 {% block content %}   
 
 <h1></h1>
+<<<<<<< HEAD
 <img src="{{ product.photo_file }}">
+=======
+<img src="https://i.imgur.com/62KiQMm.jpg">
+>>>>>>> 8958589 (adding styles)
 <p>Name: {{ product.name }}</p>
 <p>Caption: {{ product.caption }}</p>
 <p>Description: {{ product.description}}</p>
@@ -15,7 +19,7 @@
         <a id="delete" href="{% url 'products_delete' product.id %}">Delete</a>
         <form action="{% url 'assoc_product' user.id product.id %}" method="POST">
                 {% csrf_token %}
-                <button type="submit" class="btn">Add</button>
+                <button type="submit" class="btn">Add To Cart</button>
         </form>
    
 {% endif %}
