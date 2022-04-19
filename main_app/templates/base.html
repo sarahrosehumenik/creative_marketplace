@@ -8,8 +8,7 @@
     <title>MARKET</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Text+Me+One&display=swap" rel="stylesheet">
     
 
     <link
@@ -22,23 +21,25 @@
   <body>
       <div id="container">
       
-    <header>Creative Market Place</header>
+    <header>Creative Market Place           <a id="cart" href="{% url 'cart_detail' %}">FART</a></header>
     <aside>
+        <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/products">Marketplace Feed</a></li>
       {% if user.is_authenticated %}
       <li><a href="{% url 'logout' %}">Log Out</a></li>
       <li><a href="{% url 'products_create' %}">Create Post</a></li>
-      <li><a href="{% url 'cart_detail' %}">My Cart</a></li>
+     
       {% else %}
       <li><a href="{% url 'signup' %}">Sign Up</a></li>
       <li><a href="{% url 'login' %}">Log In</a></li>
       {% endif %}
+      </ul>
     </aside>
    
     <main>{% block content %} {% endblock %}</main>
     <footer>
-      <p>All Rights Reserved, &copy; 2022 CREATIVE MARKET &nbsp;</p>
+      <h2>All Rights Reserved, &copy; 2022 CREATIVE MARKET &nbsp;</h2>
     </footer>
     </div>
   </body>
