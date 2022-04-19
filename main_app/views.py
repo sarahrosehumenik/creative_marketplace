@@ -107,3 +107,4 @@ class ProductDelete(LoginRequiredMixin, DeleteView):
 # class CartList(LoginRequiredMixin, ListView):
 #     model = Cart
 
+#testing test
