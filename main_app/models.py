@@ -1,4 +1,5 @@
 from itertools import product
+from unittest.util import _MIN_COMMON_LEN
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
@@ -12,7 +13,10 @@ class Product(models.Model):
     quantity = models.IntegerField(default= 1)
     likes = models.IntegerField(default= 0)
     photo_file = models.ImageField(upload_to='images/', max_length=300)
-
+    #stripe fields
+    stripe_product_id = models.CharField(max_length=100, blank=True, default='')
+    stripe_price_id = models.CharField(max_length=100, blank=True, default='')
+    #product creator field
     user = models.ForeignKey(User, on_delete= models.CASCADE)
 
     def get_absolute_url(self):
@@ -29,14 +33,6 @@ class Cart(models.Model):
 
    
    
-class Photo(models.Model):
-    url = models.CharField(max_length=200)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return f"S3 Photo url!!!!!!!!!!!: {self.url}"
-   
-
 
 
     #many to manyfield for tags/categories

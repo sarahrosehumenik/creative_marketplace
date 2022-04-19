@@ -9,10 +9,16 @@
         <p>Name: {{ product.name }}</p>
     </a>
     <p>Price: {{ product.price }}</p>
+    {% if product.stripe_product_id %}
+        <form action="{% url 'create-stripe-checkout-session' product.stripe_price_id %}" method="POST">
+            {% csrf_token %}
+            <button type="submit">Checkout</button>
+        </form>
+    {% endif %}
     <form action="{% url 'unassoc_product' user.id product.id %}" method="POST">
         {% csrf_token %}
         <button id="removecart" type="submit" class="btn">Remove</button>
-</form>
+    </form>
     {% endfor %}
 {% else %}
     <h3>Add products to your cart..</h3>
