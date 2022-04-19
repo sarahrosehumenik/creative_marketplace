@@ -17,7 +17,7 @@ body {
   margin: 3vh auto;
   border-radius: 15px;
   box-shadow: 0 4px 11px 1px rgb(48, 47, 38);
-  background-image: url('https://i.imgur.com/wZBB6jy.jpg?1');
+  background-image: url('https://i.imgur.com/Hc6CmZL.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -27,24 +27,24 @@ header {
   grid-column: 1 / 4;
   grid-row: 1;
   height: 10vh;
-  font-family: 'Quattrocento Sans', sans-serif;
+  font-family: 'Rajdhani', sans-serif;
   text-align: center;
   padding: 2.5vh 0 1.5vh 0;
-  font-size: 7vh;
+  font-size: 6vw;
   color: rgb(255, 255, 255);
 }
 
 a {
   text-decoration: none;
-  color: black;
-  font-family: 'Quattrocento Sans', sans-serif;
+  color: rgb(0, 0, 0);
+  font-family: 'Rajdhani', sans-serif;
   margin: auto;
 }
 ul {
  display: flex;
- justify-content: center;
+ justify-content: space-between;
  flex-direction: column;
- margin: 5vh 4vh 0 0 ;
+ margin: 5vh 5vh 0 0;
  
 
 }
@@ -52,15 +52,30 @@ li {
   display: flex;
   list-style: none;
   text-align: center;
+  justify-content: space-evenly;
+ 
   
   margin: 1vh auto;
   font-family: helvetica;
-  font-size: 3vh;
+  font-size: 3vw;
+  background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0));
+  background-size: 0 3px, auto;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  transition: all .4s ease-out;
 }
 li:hover {
-  background-color: #06877e74;
+ 
   width: 100%;
+  background-size: 100% 2px, auto;
+  transform: scale(1.1);
+ 
+  
 }
+a:hover {
+  color: black;
+}
+
 
 aside {
   grid-column: 1;
@@ -69,7 +84,7 @@ aside {
   box-shadow: 0 4px 11px 1px #3a3113bd;
   border-radius: 15px;
   margin: 0 2vh 0 4vh;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(250, 119, 158, 0.618);
   width: 90%;
 
  
@@ -99,7 +114,7 @@ img {
 footer {
   height: 15vh;
   grid-column: 1/ 4;
-  font-family: "Mulish", sans-serif;
+  font-family: 'Rajdhani', sans-serif;
   margin: 5vh;
   margin: auto;
   font-size: 2vh;
@@ -130,6 +145,11 @@ p {
 
 h1 {
   text-align: center;
+}
+
+h2 {
+  margin: 7vh 0 0 0;
+
 }
 
 #productform {
