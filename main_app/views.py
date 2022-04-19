@@ -46,6 +46,12 @@ def assoc_product(request, user_id, product_id):
     return redirect('products_index')
 
 @login_required
+def unassoc_product(request, user_id, product_id):
+    cart = Cart.objects.get(user_id=user_id)
+    cart.products.remove(product_id)
+    return redirect('cart_detail')
+
+@login_required
 def cart_detail(request):
     print(request.user.id)
     cart = Cart.objects.get(user_id=request.user.id)
