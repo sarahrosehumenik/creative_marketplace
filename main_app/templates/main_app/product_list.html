@@ -9,7 +9,9 @@
 {% for product in product_list %}
 
 <a href="{% url 'products_detail' product.id %}">
+
 <img src="{{ product.photo_file }}">
+
 <p id="namelink">Name: {{ product.name }}</p>
 </a>
 <p>Caption: {{ product.caption }}</p>

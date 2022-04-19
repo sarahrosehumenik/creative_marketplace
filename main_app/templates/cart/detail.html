@@ -11,7 +11,7 @@
     <p>Price: {{ product.price }}</p>
     <form action="{% url 'unassoc_product' user.id product.id %}" method="POST">
         {% csrf_token %}
-        <button type="submit" class="btn">Remove</button>
+        <button id="removecart" type="submit" class="btn">Remove</button>
 </form>
     {% endfor %}
 {% else %}

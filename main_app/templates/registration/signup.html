@@ -8,7 +8,13 @@
 <form id="signup" method="post" action="{% url 'signup' %}">
   {% csrf_token %}
   {{ form.as_p }}
-  <input type="submit" class="btn" value="signup">
+  <input id="signupbutt" type="submit" class="btn" value="signup">
 </form>
+
+<script>
+  const formText = document.querySelector('.helptext')
+  formText.innerHTML = ""
+
+</script>
 
 {% endblock %}
