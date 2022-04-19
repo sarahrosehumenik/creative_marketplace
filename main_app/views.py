@@ -1,16 +1,18 @@
 
 from platform import java_ver
+from django.conf import settings
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.views.generic import DetailView, ListView
+from django.views.generic import DetailView, ListView, View
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Product, Cart, Photo
+from .models import Product, Cart
 import os
 import uuid
 import boto3
+import stripe
 
 
 # VIEW FUNCTIONS----------------------------------------------------------------------------
@@ -58,6 +60,7 @@ def cart_detail(request):
     products = cart.products.all()
     return render(request, 'cart/detail.html', { 'cart': cart, 'products': products })
 
+
 #PROTUCT CBVs------------------------------------------------------------------------------
 class ProductList(ListView): 
     model = Product
@@ -102,9 +105,33 @@ class ProductDelete(LoginRequiredMixin, DeleteView):
     model = Product
     success_url = '/products' 
 
-#CART CBVs------------------------------------------------------------------------------
+#Stripe Views------------------------------------------------------------------------------
 
-# class CartList(LoginRequiredMixin, ListView):
-#     model = Cart
+class CreateCheckoutSessionView(View):
+    stripe.api_key = os.environ['STRIPE_SECRET_KEY']
+    def post(self, request, *args, **kwargs):
+        stripe_product = Product.objects.get(stripe_price_id=self.kwargs["pk"])
+        try:
+            checkout_session = stripe.checkout.Session.create(
+                payment_method_types=['card'],
+                line_items=[
+                    {
+                        # Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+                        'price': stripe_product.stripe_price_id,
+                        'quantity': 1,
+                    },
+                ],
+                mode='payment',
+                success_url=settings.BASE_URL + '/payments/success/',
+                cancel_url=settings.BASE_URL + '/payments/cancel/',
+            )
+        except Exception as e:
+            print(f'\n\n{e}\n\n')
 
-#testing test
+        return redirect(checkout_session.url)
+
+def payment_success(request):
+    return render(request, 'success.html')
+
+def payment_cancel(request):
+    return render(request, 'cancel.html')
