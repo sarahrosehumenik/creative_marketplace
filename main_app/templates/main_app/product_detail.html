@@ -18,7 +18,7 @@
         <a id="delete" href="{% url 'products_delete' product.id %}">Delete</a>
         <form action="{% url 'assoc_product' user.id product.id %}" method="POST">
                 {% csrf_token %}
-                <button type="submit" class="btn">Add To Cart</button>
+                <button id="add" type="submit" class="btn">Add To Cart</button>
         </form>
    
 {% endif %}

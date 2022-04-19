@@ -27,7 +27,7 @@ header {
   grid-column: 1 / 4;
   grid-row: 1;
   height: 10vh;
-  font-family: 'Text Me One', sans-serif;
+  font-family: 'Quattrocento Sans', sans-serif;
   text-align: center;
   padding: 2.5vh 0 1.5vh 0;
   font-size: 7vh;
@@ -37,7 +37,7 @@ header {
 a {
   text-decoration: none;
   color: black;
-  font-family: 'Text Me One', sans-serif;
+  font-family: 'Quattrocento Sans', sans-serif;
   margin: auto;
 }
 ul {
@@ -45,18 +45,20 @@ ul {
  justify-content: center;
  flex-direction: column;
  margin: 5vh 4vh 0 0 ;
+ 
 
 }
 li {
   display: flex;
   list-style: none;
+  text-align: center;
   
   margin: 1vh auto;
-  font-family: 'Bellota Text', cursive;
+  font-family: helvetica;
   font-size: 3vh;
 }
 li:hover {
-  background-color: #ff00f274;
+  background-color: #06877e74;
   width: 100%;
 }
 
@@ -129,4 +131,91 @@ p {
 h1 {
   text-align: center;
 }
+
+#productform {
+ display: flex;
+ justify-content:center;
+ flex-direction: column;
+ width: 90%;
+ margin: 0 0 0 5vh;
+}
+
+#productbutt {
+  background-color: rgb(69, 86, 100);
+  width: 20%;
+  height: 5vh;
+  border: none;
+  color: white;
+  box-shadow: 0 4px 11px 1px rgba(0, 0, 0, 0.25);
+  margin: 3vh auto;
+}
+
+
+
+#signup {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 2.5vh;
+}
+
+input {
+  height: 3.5vh;
+}
+
+.helptext {
+  font-size: 2vh;
+}
+
+#signupbutt {
+  width: 30%;
+  height: 5vh;
+  margin: 3vh auto;
+  background-color:rgb(69, 86, 100);
+  border: none;
+  color:rgb(255, 255, 255);
+  box-shadow: 0 4px 11px 1px rgba(0, 0, 0, 0.25);
+}
+#login{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#loginbutt {
+ 
+  width: 30%;
+  height: 5vh;
+  margin: 3vh auto;
+  background-color:rgb(69, 86, 100);
+  border: none;
+  color:rgb(255, 255, 255);
+  box-shadow: 0 4px 11px 1px rgba(0, 0, 0, 0.25);
+
+}
+
+#removecart {
+  display: block;
+  width: 30%;
+  height: 5vh;
+  margin: 3vh auto;
+  background-color:rgb(69, 86, 100);
+  border: none;
+  color:rgb(255, 255, 255);
+  box-shadow: 0 4px 11px 1px rgba(0, 0, 0, 0.25);
+
+}
+
+#add {
+  display: block;
+  width: 30%;
+  height: 5vh;
+  margin: 3vh auto;
+  background-color:rgb(69, 86, 100);
+  border: none;
+  color:rgb(255, 255, 255);
+  box-shadow: 0 4px 11px 1px rgba(0, 0, 0, 0.25);
+
+}
+
+
 
