@@ -16,6 +16,8 @@ urlpatterns = [
     path('cart/<int:user_id>/assoc_product/<int:product_id>/', views.assoc_product, name='assoc_product'),
     path('cart/<int:user_id>/unassoc_product/<int:product_id>/', views.unassoc_product, name='unassoc_product'),
     path('cart/', views.cart_detail, name='cart_detail'),
+    #PROFILE URL PATHS------------------------------------------------------------------------
+    path('profile/', views.profile_likes, name='profile_likes'),
     #STRIPE URL PATHS------------------------------------------------------------------------
     path('payments/create-checkout-session/<pk>/', views.CreateCheckoutSessionView.as_view(), name='create-stripe-checkout-session'),
     path('payments/cancel/', views.payment_cancel, name='cancel-stripe-payment'),
