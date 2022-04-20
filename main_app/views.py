@@ -8,7 +8,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Product, Cart
+from .models import Product, Cart, Like
 import os
 import uuid
 import boto3
@@ -40,6 +40,10 @@ def signup(request):
     context = {'form': form, 'error_message': error_message}
     return render(request, 'registration/signup.html', context)
 
+@login_required
+def add_like(request, product_id, user_id):
+    like = Like.objects.create(product_id=product_id, user_id=user_id)
+    return redirect('products_index')
 
 @login_required
 def assoc_product(request, user_id, product_id):
@@ -64,6 +68,13 @@ def cart_detail(request):
 #PROTUCT CBVs------------------------------------------------------------------------------
 class ProductList(ListView): 
     model = Product
+
+    def get_context_data(self, **kwargs):
+        context = super(ProductList, self).get_context_data(**kwargs)
+        context['user_likes'] = Like.objects.filter(user_id=self.request.user.id)
+        context['not_likes'] = Like.objects.exclude(user_id=self.request.user.id)
+        context['current_user'] = self.request.user.id
+        return context
     
 class ProductCreate(LoginRequiredMixin,CreateView):
     model = Product
@@ -96,6 +107,7 @@ class ProductCreate(LoginRequiredMixin,CreateView):
 
 class ProductDetail(DetailView):
     model = Product
+    
 
 class ProductUpdate(LoginRequiredMixin, UpdateView):
     model = Product
