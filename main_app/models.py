@@ -32,6 +32,9 @@ class Comment(models.Model):
    product = models.ForeignKey(Product, on_delete= models.CASCADE)
    user = models.ForeignKey(User, on_delete= models.CASCADE)
    text = models.TextField(max_length=300)
+
+   def get_absolute_url(self):
+      return reverse('products_detail', kwargs={'product_id':self.id})
    
 class Like(models.Model):
    product = models.ForeignKey(Product, on_delete= models.CASCADE)
