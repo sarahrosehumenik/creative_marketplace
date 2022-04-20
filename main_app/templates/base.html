@@ -23,12 +23,12 @@
   <body>
       <div id="container">
       
-    <header>Creative Market Place</header>
+    <header>Check Me Out</header>
     <aside>
         <ul>
       <li><a href="/">Home</a></li>
      <li><a id="cart" href="{% url 'cart_detail' %}">FART</a></li>
-      <li><a href="/products">Marketplace Feed</a></li>
+      <li><a href="/products">Check It</a></li>
       {% if user.is_authenticated %}
       <li><a href="{% url 'logout' %}">Log Out</a></li>
       <li><a href="{% url 'products_create' %}">Create Post</a></li>
