@@ -11,6 +11,7 @@ urlpatterns = [
     path('products/<int:pk>/update', views.ProductUpdate.as_view(), name='products_update'),
     path('products/<int:pk>/delete', views.ProductDelete.as_view(), name='products_delete'),
     path('products/<int:product_id>/like/<int:user_id>/', views.add_like, name='add_like'),
+    path('products/<int:product_id>/add_comment/<int:user_id>/', views.add_comment, name='add_comment'),
     #CART URL PATHS--------------------------------------------------------------------------
     path('cart/<int:user_id>/assoc_product/<int:product_id>/', views.assoc_product, name='assoc_product'),
     path('cart/<int:user_id>/unassoc_product/<int:product_id>/', views.unassoc_product, name='unassoc_product'),

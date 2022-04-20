@@ -1,4 +1,5 @@
 
+from multiprocessing import context
 from platform import java_ver
 from django.conf import settings
 from django.shortcuts import render, redirect
@@ -13,6 +14,7 @@ import os
 import uuid
 import boto3
 import stripe
+from .forms import CommentForm
 
 
 # VIEW FUNCTIONS----------------------------------------------------------------------------
@@ -44,6 +46,17 @@ def signup(request):
 def add_like(request, product_id, user_id):
     like = Like.objects.create(product_id=product_id, user_id=user_id)
     return redirect('products_index')
+
+@login_required
+def add_comment(request, product_id, user_id):
+   form = CommentForm(request.POST)
+ 
+   if form.is_valid():
+       new_comment = form.save(commit=False)
+       new_comment.product_id = product_id
+       new_comment.user_id = user_id
+       new_comment.save()
+   return redirect('products_detail', pk=product_id) # this may be wrong at the moment
 
 @login_required
 def assoc_product(request, user_id, product_id):
@@ -116,6 +129,12 @@ class ProductCreate(LoginRequiredMixin,CreateView):
 
 class ProductDetail(DetailView):
     model = Product
+    def get_context_data(self, **kwargs):
+        context = super(ProductDetail, self).get_context_data(**kwargs)
+        comment_form = CommentForm()
+        context["comment_form"] = comment_form
+        return context
+    
     
 
 class ProductUpdate(LoginRequiredMixin, UpdateView):
