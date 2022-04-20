@@ -20,9 +20,17 @@
                 {% csrf_token %}
                 <button id="add" type="submit" class="btn">Add To Cart</button>
         </form>
-   
-{% endif %}
+        <form action="{% url 'add_comment' product.id user.id %}" method="POST">
+                {% csrf_token %}
+                {{ comment_form.as_p }}
+                <input type="submit" class="btn" value="Add Comment">
+                
+        </form>
 
+{% endif %}
+{% for comment in product.comment_set.all %}
+<label>comment:<p>{{ comment.user.username }}</p> <p>{{ comment.text }} </p></label>
+{% endfor %}
 
 
 
