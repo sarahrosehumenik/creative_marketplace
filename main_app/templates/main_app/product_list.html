@@ -4,15 +4,17 @@
 {% for item in feed %}
 
     <a href="{% url 'products_detail' item.product.id %}">
-
+    <p>@{{ item.product.user}}</p>
+  
     <img src="{{ item.product.photo_file }}">
-        
-    <p id="namelink">Name: {{ item.product.name }}</p>
-    </a>
 
-    <p>Caption: {{ item.product.caption }}</p>
-    <p>Quantity: {{ item.product.quantity }} </p>
-    <p>Price: {{ item.product.price }}</p>
+    
+    
+    <p id="namelink">Title: {{ item.product.name }}</p>
+    </a>
+    
+    <p><strong>@{{ item.product.user}}</strong> &nbsp; {{ item.product.caption }}</p>
+    <p>${{ item.product.price }}</p>
 
     {% if item.like_count %}
         <p>Likes: {{item.like_count}}</p>
