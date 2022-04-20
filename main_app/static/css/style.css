@@ -1,23 +1,18 @@
 body {
-  
   background-size: 100%;
-  
- 
-  
 }
 
 #container {
-  
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1/4fr 5fr 1fr;
   background-color: rgb(255, 255, 255);
   height: 80%;
-  width: 80%;
+  width: 95%;
   margin: 3vh auto;
   border-radius: 15px;
   box-shadow: 0 4px 11px 1px rgb(48, 47, 38);
-  background-image: url('https://i.imgur.com/Hc6CmZL.jpg');
+  background-image: url("https://i.imgur.com/Hc6CmZL.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -27,34 +22,31 @@ header {
   grid-column: 1 / 4;
   grid-row: 1;
   height: 10vh;
-  font-family: 'Rajdhani', sans-serif;
+  font-family: "Rajdhani", sans-serif;
   text-align: center;
-  padding: 2.5vh 0 1.5vh 0;
-  font-size: 6vw;
+  padding: 2.5vh 0 2vh 0;
+  font-size: 4vw;
   color: rgb(255, 255, 255);
 }
 
 a {
   text-decoration: none;
   color: rgb(0, 0, 0);
-  font-family: 'Rajdhani', sans-serif;
+  font-family: "Rajdhani", sans-serif;
   margin: auto;
 }
 ul {
- display: flex;
- justify-content: space-between;
- flex-direction: column;
- margin: 5vh 5vh 0 0;
- 
-
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 5vh 5vh 0 0;
 }
 li {
   display: flex;
   list-style: none;
   text-align: center;
   justify-content: space-evenly;
- 
-  
+
   margin: 1vh auto;
   font-family: helvetica;
   font-size: 3vw;
@@ -62,20 +54,16 @@ li {
   background-size: 0 3px, auto;
   background-repeat: no-repeat;
   background-position: center bottom;
-  transition: all .4s ease-out;
+  transition: all 0.4s ease-out;
 }
 li:hover {
- 
   width: 100%;
   background-size: 100% 2px, auto;
   transform: scale(1.1);
- 
-  
 }
 a:hover {
   color: black;
 }
-
 
 aside {
   grid-column: 1;
@@ -86,8 +74,6 @@ aside {
   margin: 0 2vh 0 4vh;
   background-color: rgba(250, 119, 158, 0.618);
   width: 90%;
-
- 
   font-family: "Mulish", sans-serif;
 }
 
@@ -95,8 +81,7 @@ main {
   box-shadow: inset 0 0 10px rgba(49, 35, 23, 0.728);
   grid-column: 2/ 4;
   grid-row: 2/3;
-
- background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
   font-family: "Mulish", sans-serif;
   overflow: scroll;
   height: 100vh;
@@ -114,7 +99,7 @@ img {
 footer {
   height: 15vh;
   grid-column: 1/ 4;
-  font-family: 'Rajdhani', sans-serif;
+  font-family: "Rajdhani", sans-serif;
   margin: 5vh;
   margin: auto;
   font-size: 2vh;
@@ -124,7 +109,6 @@ p {
   display: flex;
   justify-content: center;
 
-  
   margin: 0.5px auto;
   width: 70%;
   font-family: "Mulish", sans-serif;
@@ -149,15 +133,14 @@ h1 {
 
 h2 {
   margin: 7vh 0 0 0;
-
 }
 
 #productform {
- display: flex;
- justify-content:center;
- flex-direction: column;
- width: 90%;
- margin: 0 0 0 5vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 0 0 5vh;
 }
 
 #productbutt {
@@ -169,8 +152,6 @@ h2 {
   box-shadow: 0 4px 11px 1px rgba(0, 0, 0, 0.25);
   margin: 3vh auto;
 }
-
-
 
 #signup {
   display: flex;
@@ -191,26 +172,24 @@ input {
   width: 30%;
   height: 5vh;
   margin: 3vh auto;
-  background-color:rgb(69, 86, 100);
+  background-color: rgb(69, 86, 100);
   border: none;
-  color:rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   box-shadow: 0 4px 11px 1px rgba(0, 0, 0, 0.25);
 }
-#login{
+#login {
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
 #loginbutt {
- 
   width: 30%;
   height: 5vh;
   margin: 3vh auto;
-  background-color:rgb(69, 86, 100);
+  background-color: rgb(69, 86, 100);
   border: none;
-  color:rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   box-shadow: 0 4px 11px 1px rgba(0, 0, 0, 0.25);
-
 }
 
 #removecart {
@@ -218,11 +197,10 @@ input {
   width: 30%;
   height: 5vh;
   margin: 3vh auto;
-  background-color:rgb(69, 86, 100);
+  background-color: rgb(69, 86, 100);
   border: none;
-  color:rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   box-shadow: 0 4px 11px 1px rgba(0, 0, 0, 0.25);
-
 }
 
 #add {
@@ -230,12 +208,8 @@ input {
   width: 30%;
   height: 5vh;
   margin: 3vh auto;
-  background-color:rgb(69, 86, 100);
+  background-color: rgb(69, 86, 100);
   border: none;
-  color:rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   box-shadow: 0 4px 11px 1px rgba(0, 0, 0, 0.25);
-
 }
-
-
-

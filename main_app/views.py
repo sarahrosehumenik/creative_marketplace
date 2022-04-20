@@ -100,7 +100,7 @@ class ProductList(ListView):
     
 class ProductCreate(LoginRequiredMixin,CreateView):
     model = Product
-    fields = ['name','caption', 'description', 'price', 'quantity', 'photo_file']
+    fields = ['name','caption', 'description', 'price', 'quantity', 'photo_file', 'tags']
     
 
     def form_valid(self, form):
