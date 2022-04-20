@@ -1,16 +1,7 @@
-<html>
-
-<head>
-    <title>Thanks for your order!</title>
-</head>
-
-<body>
-    <section>
-        <p>
-            We appreciate you gave us a chance and made a purchase on our website.
-        </p>
-        <a href="{% url 'home' %}">Test again</a>
-    </section>
-</body>
-
-</html>
+{% extends 'base.html' %}
+    {% block content%}
+        <h1>
+            We appreciate you 👍🏻 🙂
+        </h1>
+      <li>  <a href="{% url 'products_index' %}">Return to Feed</a> </li>
+    {% endblock %}
