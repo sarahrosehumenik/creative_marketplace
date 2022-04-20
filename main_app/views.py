@@ -97,6 +97,8 @@ class ProductList(ListView):
         #run algo on feed
         context['feed'] = feed
         return context
+
+   
     
 class ProductCreate(LoginRequiredMixin,CreateView):
     model = Product
