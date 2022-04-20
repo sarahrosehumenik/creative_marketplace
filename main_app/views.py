@@ -71,9 +71,18 @@ class ProductList(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(ProductList, self).get_context_data(**kwargs)
-        context['user_likes'] = Like.objects.filter(user_id=self.request.user.id)
-        context['not_likes'] = Like.objects.exclude(user_id=self.request.user.id)
-        context['current_user'] = self.request.user.id
+        products = Product.objects.all()
+        user_likes = Like.objects.filter(user_id=self.request.user.id)
+        feed = []
+        for product in products:
+            like_count = product.like_set.all().count()
+            user_liked = False
+            for user_like in user_likes:
+                if user_like.product.id == product.id:
+                    user_liked = True
+            feed.append({'product': product, 'like_count':like_count, 'user_liked': user_liked})
+        #run algo on feed
+        context['feed'] = feed
         return context
     
 class ProductCreate(LoginRequiredMixin,CreateView):
