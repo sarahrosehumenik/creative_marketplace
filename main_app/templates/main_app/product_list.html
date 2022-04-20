@@ -1,29 +1,36 @@
 {% extends 'base.html'%}
 {% block content %}   
 
+{% for item in feed %}
 
+    <a href="{% url 'products_detail' item.product.id %}">
 
+    <img src="{{ item.product.photo_file }}">
+        
+    <p id="namelink">Name: {{ item.product.name }}</p>
+    </a>
 
+    <p>Caption: {{ item.product.caption }}</p>
+    <p>Quantity: {{ item.product.quantity }} </p>
+    <p>Price: {{ item.product.price }}</p>
 
+    {% if item.like_count %}
+        <p>Likes: {{item.like_count}}</p>
+    {% endif %}
 
-{% for product in product_list %}
-
-<a href="{% url 'products_detail' product.id %}">
-
-<img src="{{ product.photo_file }}">
-
-<p id="namelink">Name: {{ product.name }}</p>
-</a>
-<p>Caption: {{ product.caption }}</p>
-<p>Quantity: {{ product.quantity }} </p>
-<p>Price: {{ product.price }}</p>
-<p>Likes:{{ product.likes }}</p>
-
-
-
+    {% if item.user_liked %}
+        <p>(insert liked icon)</p>
+    {% else %}
+        <form action="{% url 'add_like' item.product.id user.id %}" method="POST">
+            {% csrf_token %}
+            <button id="like-btn" type="submit" class="btn">Like</button>
+        </form>
+    {% endif %}
 
 {% endfor %}
 
 {% endblock %}
+
+
 
 
