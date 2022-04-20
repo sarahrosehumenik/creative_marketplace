@@ -70,6 +70,7 @@ def unassoc_product(request, user_id, product_id):
     cart.products.remove(product_id)
     return redirect('cart_detail')
 
+
 @login_required
 def cart_detail(request):
     print(request.user.id)
@@ -77,8 +78,17 @@ def cart_detail(request):
     products = cart.products.all()
     return render(request, 'cart/detail.html', { 'cart': cart, 'products': products })
 
+@login_required
+def profile_likes(request):
+    likes = Like.objects.filter(user_id = request.user.id)
+    products = []
+    for like in likes:
+        liked_product = Product.objects.get(id = like.product.id)
+        products.append(liked_product)
+    return render(request, 'profile/likes.html', { 'likes': likes, 'products': products })
 
-#PROTUCT CBVs------------------------------------------------------------------------------
+
+#PRODUCT CBVs------------------------------------------------------------------------------
 class ProductList(ListView): 
     model = Product
 
