@@ -5,13 +5,16 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 
 # Create your models here.
+class Tag(models.Model):
+   hashtag = models.CharField(max_length=50) 
+   
 class Product(models.Model):
     name = models.CharField(max_length= 100)
     caption = models.CharField(max_length=140)
     description = models.TextField(max_length=2000) 
     price = models.IntegerField(default= 0)
+    tags = models.ManyToManyField(Tag)
     quantity = models.IntegerField(default= 1)
-    likes = models.IntegerField(default= 0)
     photo_file = models.ImageField(upload_to='images/', max_length=300)
     #stripe fields
     stripe_product_id = models.CharField(max_length=100, blank=True, default='')
@@ -24,6 +27,16 @@ class Product(models.Model):
 
     def __str__(self):
        return self.name
+
+class Comment(models.Model):
+   product = models.ForeignKey(Product, on_delete= models.CASCADE)
+   user = models.ForeignKey(User, on_delete= models.CASCADE)
+   text = models.TextField(max_length=300)
+   
+class Like(models.Model):
+   product = models.ForeignKey(Product, on_delete= models.CASCADE)
+   user = models.ForeignKey(User, on_delete= models.CASCADE)
+
 
 class Cart(models.Model):
 
