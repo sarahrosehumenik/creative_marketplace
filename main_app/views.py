@@ -87,6 +87,20 @@ def profile_likes(request):
         products.append(liked_product)
     return render(request, 'profile/likes.html', { 'likes': likes, 'products': products })
 
+def searched_feed(request):
+    search_input = request.POST.get("search_input")
+    print(search_input)
+    products_by_tag = Product.objects.filter(tags__hashtag = search_input)
+    products_by_creator = Product.objects.filter(user__username = search_input)
+    products_by_name = Product.objects.filter(name = search_input)
+
+   
+    print('Hitting searched_feed view func')
+    return render(request, 'search/searched_products.html', { 
+        'products_by_tag': products_by_tag,
+        'products_by_creator': products_by_creator,
+        'products_by_name_': products_by_name,
+    })
 
 #PRODUCT CBVs------------------------------------------------------------------------------
 class ProductList(ListView): 
