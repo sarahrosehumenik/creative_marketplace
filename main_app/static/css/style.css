@@ -322,8 +322,7 @@ input {
 }
 
 .product-container {
-  border-bottom: 2px;
   border-color: lightgray;
-  margin-left: 4px;
+  margin: 35px
 }
 
