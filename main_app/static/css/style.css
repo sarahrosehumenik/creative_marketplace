@@ -213,3 +213,45 @@ input {
   color: rgb(255, 255, 255);
   box-shadow: 0 4px 11px 1px rgba(0, 0, 0, 0.25);
 }
+
+
+.product-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1vw 1fr 1fr;
+}
+
+.product-container > img {
+  grid-row: 2/5;
+  grid-column: 1/2;
+}
+
+#caption {
+  grid-row: 5/6
+}
+
+#like-form {
+  grid-column: 2/3;
+  grid-row: 3/4
+}
+
+#product-name {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+#price {
+  grid-column: 2/3;
+  align-self: center;
+  justify-self: center;
+}
+
+#like-form {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  align-self: center;
+  justify-self: center;
+}
+
+
+
