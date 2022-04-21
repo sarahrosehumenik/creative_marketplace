@@ -14,7 +14,7 @@
         
         <p id="caption"><span id="username-spn">@{{ item.product.user}}</span> {{ item.product.caption }}</p>
         
-        <a id="comment-icon" href="{% url 'products_detail' item.product.id}">💬</a>
+        <a id="comment-icon" href="{% url 'products_detail' item.product.id %}">💬</a>
 
         <form id='cart-form' action="{% url 'assoc_product' user.id item.product.id %}" method="POST">
             {% csrf_token %}
