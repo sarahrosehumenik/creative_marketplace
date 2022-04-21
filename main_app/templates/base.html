@@ -26,19 +26,25 @@
     <header>Check Me Out</header>
     <aside>
         <ul>
-      <li><a href="/">Home</a></li>
-     <li><a id="cart" href="{% url 'cart_detail' %}">FART</a></li>
-      <li><a href="/products">Check It</a></li>
-      {% if user.is_authenticated %}
-      <li><a href="{% url 'logout' %}">Log Out</a></li>
-      <li><a href="{% url 'products_create' %}">Create Post</a></li>
-      <li><a href="{% url 'profile_likes' %}">My Likes</a></li>
-     
-      {% else %}
-      <li><a href="{% url 'signup' %}">Sign Up</a></li>
-      <li><a href="{% url 'login' %}">Log In</a></li>
-      {% endif %}
-      </ul>
+          <li><a href="/">Home</a></li>
+          <li><a id="cart" href="{% url 'cart_detail' %}">FART</a></li>
+          <li><a href="/products">Check It</a></li>
+          {% if user.is_authenticated %}
+          <li><a href="{% url 'logout' %}">Log Out</a></li>
+          <li><a href="{% url 'products_create' %}">Create Post</a></li>
+          <li><a href="{% url 'profile_likes' %}">My Likes</a></li>
+          
+          {% else %}
+          <li><a href="{% url 'signup' %}">Sign Up</a></li>
+          <li><a href="{% url 'login' %}">Log In</a></li>
+          {% endif %}
+            
+        </ul>
+        <form action="{% url 'search' %}" method="POST">
+          {% csrf_token %}
+          <input name="search_input" type="text">
+          <button type="submit">Search</button>
+        </form>
     </aside>
    
     <main>{% block content %} {% endblock %}</main>

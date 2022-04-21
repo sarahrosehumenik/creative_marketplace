@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+{% block content %}
+
+
+{% for product in products_by_tag %}
+    <p>{{product.name}}</p>
+    <p>{{product.price}}</p>
+    <p>{{product.caption}}</p>
+    <img src="{{product.photo_file}}" alt="image of product">
+{% endfor %}
+
+{% for product in products_by_creator %}
+    <p>{{product.name}}</p>
+    <p>{{product.price}}</p>
+    <p>{{product.caption}}</p>
+    <img src="{{product.photo_file}}" alt="image of product">
+{% endfor %}
+
+{% for product in products_by_name %}
+    <p>{{product.name}}</p>
+    <p>{{product.price}}</p>
+    <p>{{product.caption}}</p>
+    <img src="{{product.photo_file}}" alt="image of product">
+{% endfor %}
+
+{% endblock %}
