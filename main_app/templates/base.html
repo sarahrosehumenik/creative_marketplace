@@ -40,10 +40,10 @@
           {% endif %}
             
         </ul>
-        <form action="{% url 'search' %}" method="POST">
+        <form id="search" action="{% url 'search' %}" method="POST">
           {% csrf_token %}
-          <input name="search_input" type="text">
-          <button type="submit">Search</button>
+          <input id="searchin" name="search_input" placeholder="Title, tags or username!" type="text">
+          <button id="searchbutt"type="submit">Search</button>
         </form>
     </aside>
    

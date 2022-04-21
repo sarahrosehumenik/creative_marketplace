@@ -260,6 +260,7 @@ input {
 
 #liked-icon {
   margin-right: 23px;
+  font-size: 3vw;
 }
 /* #liked-icon:hover {
   cursor: pointer;
@@ -267,9 +268,13 @@ input {
 } */
 
 #like-icon {
-  border-color: transparent;
-  background-color: white;
-  font-size: 1em;
+  font-size: 3vw;
+  height:4vw;
+  width: 4vw;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+
+
 }
 #like-icon:hover {
   cursor: pointer;
@@ -279,6 +284,12 @@ input {
 #comment-icon {
   grid-row: 3/4;
   grid-column: 2/3;
+  background-color:rgba(98, 103, 121, 0.954);
+  padding: .25vh 1.5vh .25vh 1.5vh;
+  font-size: 2vw;
+  border: 1px solid black;
+  
+
 }
 
 #comment-icon:hover {
@@ -314,15 +325,41 @@ input {
 #cart-form {
   align-self: center;
   justify-self: center;
+  
 }
+#cart-icon{
+  height:3vw;
+  width: 4vw;
+  font-size: 1.5vw;
+  background-color: rgba(0, 194, 149, 0.81);
+  border: 1px solid black;
+ 
 
+}
 #cart-icon:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
+
+
 
 .product-container {
   border-color: lightgray;
   margin: 35px
 }
 
+#search {
+  display: flex;
+  justify-content: center;
+  
+}
+
+#searchbutt {
+  background-color:white;
+  border: 1px solid rgb(9, 0, 0);
+}
+
+#searchin {
+  border: 1px solid black;
+  
+}
