@@ -1,0 +1,1 @@
+web: gunicorn creative_marketplace.wsgi

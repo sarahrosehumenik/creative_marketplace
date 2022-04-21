@@ -20,7 +20,7 @@ environ.Env.read_env()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Our sites base url. CHANGE BEFORE DEPLOYING
-BASE_URL = 'http://localhost:8000'
+BASE_URL = 'https://checkmeout-marketplace.herokuapp.com/'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -130,4 +130,7 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/' #change later to index
-LOGOUT_REDIRECT_URL = '/' #logged out users can see posts on main page, but they cant CU or D
+LOGOUT_REDIRECT_URL = '/' #logged out users can see posts on main page, but they cant CU or Dh
+
+import django_on_heroku
+django_on_heroku.settings(locals())
