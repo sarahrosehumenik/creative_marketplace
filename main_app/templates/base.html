@@ -38,7 +38,27 @@
       <li><a href="{% url 'signup' %}">Sign Up</a></li>
       <li><a href="{% url 'login' %}">Log In</a></li>
       {% endif %}
+      <p id="filter-tags">Filter by tag</p>
+      <div class="search">
+        <div class="search-house">
+      <form action="" method="GET" class="search-product">
+        {{ form.as_p }}
+        <button type="submit" id="search-btn">Search</button>
+        </form>
       </ul>
+     
+
+
+        
+        
+       
+            </div>
+        </div>
+    </div>
+  </div>        
+</section>
+      
+
     </aside>
    
     <main>{% block content %} {% endblock %}</main>

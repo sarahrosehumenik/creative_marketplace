@@ -146,6 +146,16 @@ class ProductDetail(DetailView):
         comment_form = CommentForm()
         context["comment_form"] = comment_form
         return context
+
+    def get_queryset(self):
+        tags = self.request.GET.get('tags')
+        
+        if tags:
+            return Product.objects.filter(tags = tags)
+       
+        else:
+            return Product.objects.all()
+
     
     
 
