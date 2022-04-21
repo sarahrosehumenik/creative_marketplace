@@ -14,7 +14,7 @@ import os
 import uuid
 import boto3
 import stripe
-from .forms import CommentForm
+from .forms import CommentForm, SearchForm
 
 
 # VIEW FUNCTIONS----------------------------------------------------------------------------
@@ -70,7 +70,6 @@ def unassoc_product(request, user_id, product_id):
     cart.products.remove(product_id)
     return redirect('cart_detail')
 
-
 @login_required
 def cart_detail(request):
     print(request.user.id)
@@ -87,13 +86,13 @@ def profile_likes(request):
         products.append(liked_product)
     return render(request, 'profile/likes.html', { 'likes': likes, 'products': products })
 
-
-#PRODUCT CBVs------------------------------------------------------------------------------
+#PROTUCT CBVs------------------------------------------------------------------------------
 class ProductList(ListView): 
     model = Product
 
-    def get_context_data(self, **kwargs):
-        context = super(ProductList, self).get_context_data(**kwargs)
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(ProductList, self).get_context_data(*args, **kwargs)
         products = Product.objects.all()
         user_likes = Like.objects.filter(user_id=self.request.user.id)
         feed = []
@@ -105,8 +104,27 @@ class ProductList(ListView):
                     user_liked = True
             feed.append({'product': product, 'like_count':like_count, 'user_liked': user_liked})
         #run algo on feed
+
+        context['form'] = SearchForm()
         context['feed'] = feed
         return context
+        
+  
+   
+
+
+
+
+
+    def get_queryset(self):
+        tags = self.request.GET.get('tags')
+        
+        if tags:
+            return Product.objects.filter(tags = tags)
+       
+        else:
+            return Product.objects.all()
+
 
    
     
@@ -146,6 +164,8 @@ class ProductDetail(DetailView):
         comment_form = CommentForm()
         context["comment_form"] = comment_form
         return context
+
+   
     
     
 
