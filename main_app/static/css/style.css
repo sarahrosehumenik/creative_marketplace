@@ -218,40 +218,112 @@ input {
 .product-container {
   display: grid;
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1vw 1fr 1fr;
+  grid-template-rows: 3vw 12vw 12vw 12vw 3vw 5vw;
 }
 
-.product-container > img {
+.product-container > a > img {
+  max-width: 100%;
   grid-row: 2/5;
   grid-column: 1/2;
+}
+#user-name {
+  width: 93%;
+  justify-content: left;
 }
 
 #caption {
   grid-row: 5/6
 }
 
-#like-form {
+#caption {
+  display: block;
+  width: 90%;
+}
+
+#caption > span {
+  font-weight: bold;
+  padding-right: 8px;
+}
+
+#like-form, #liked-icon, #like-count, #like-icon {
   grid-column: 2/3;
-  grid-row: 3/4
+  grid-row: 4/5;
+  align-self: center;
+  justify-self: center;
+}
+
+
+#like-count {
+  justify-content: right;
+  margin-right: 38px;
+}
+
+#liked-icon {
+  margin-right: 23px;
+}
+/* #liked-icon:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+} */
+
+#like-icon {
+  border-color: transparent;
+  background-color: white;
+  font-size: 1em;
+}
+#like-icon:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+#comment-icon {
+  grid-row: 3/4;
+  grid-column: 2/3;
+}
+
+#comment-icon:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 #product-name {
   grid-column: 2/3;
   grid-row: 1/2;
+  width: 100%;
+  align-self: center;
+  justify-self: center;
+}
+
+#product-name > p {
+  width: 100%;
+  justify-content: left;
 }
 
 #price {
-  grid-column: 2/3;
-  align-self: center;
-  justify-self: center;
+  margin-left: 8px;
+  margin-right: 29px;
 }
 
 #like-form {
   grid-column: 2/3;
-  grid-row: 3/4;
+  grid-row: 4/5;
   align-self: center;
   justify-self: center;
 }
 
+#cart-form {
+  align-self: center;
+  justify-self: center;
+}
 
+#cart-icon:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.product-container {
+  border-bottom: 2px;
+  border-color: lightgray;
+  margin-left: 4px;
+}
 
