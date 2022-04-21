@@ -93,13 +93,13 @@ def searched_feed(request):
     products_by_tag = Product.objects.filter(tags__hashtag = search_input)
     products_by_creator = Product.objects.filter(user__username = search_input)
     products_by_name = Product.objects.filter(name = search_input)
-
+    
    
     print('Hitting searched_feed view func')
     return render(request, 'search/searched_products.html', { 
         'products_by_tag': products_by_tag,
         'products_by_creator': products_by_creator,
-        'products_by_name_': products_by_name,
+        'products_by_name': products_by_name,
     })
 
 #PROTUCT CBVs------------------------------------------------------------------------------
