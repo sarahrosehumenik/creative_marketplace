@@ -12,9 +12,11 @@ body {
   margin: 3vh auto;
   border-radius: 15px;
   box-shadow: 0 4px 11px 1px rgb(48, 47, 38);
-  background-image: url("https://i.imgur.com/Hc6CmZL.jpg");
+  background-image: url("https://i.imgur.com/eYasMNS.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 header {
@@ -26,7 +28,7 @@ header {
   text-align: center;
   padding: 2.5vh 0 2vh 0;
   font-size: 4vw;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
 a {
@@ -48,7 +50,7 @@ li {
   justify-content: space-evenly;
 
   margin: 1vh auto;
-  font-family: helvetica;
+  font-family: "Rajdhani", sans-serif;
   font-size: 3vw;
   background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0));
   background-size: 0 3px, auto;
@@ -72,12 +74,13 @@ aside {
   box-shadow: 0 4px 11px 1px #3a3113bd;
   border-radius: 15px;
   margin: 0 2vh 0 4vh;
-  background-color: rgba(250, 119, 158, 0.618);
+  background-color: rgba(0, 244, 187, 0.564);
   width: 90%;
   font-family: "Mulish", sans-serif;
 }
 
 main {
+  
   box-shadow: inset 0 0 10px rgba(49, 35, 23, 0.728);
   grid-column: 2/ 4;
   grid-row: 2/3;
@@ -87,13 +90,16 @@ main {
   height: 100vh;
   margin: 0 3vh 0 3vh;
   border-radius: 10px;
+  
 }
 
 img {
-  max-height: 50vh;
+  max-width: 40vw;
+  max-height: 45vw;
   display: block;
   margin: 3vh auto;
   box-shadow: 0 4px 11px 1px rgba(0, 0, 0, 0.15);
+  object-fit: contain;
 }
 
 footer {
@@ -111,28 +117,37 @@ p {
 
   margin: 0.5px auto;
   width: 70%;
-  font-family: "Mulish", sans-serif;
+  font-family: "Rajdhani", sans-serif;
 }
 
 #namelink:hover {
   background-color: rgb(20, 0, 20);
   color: white;
+  font-family: "Rajdhani", sans-serif;
 }
 
 #edit,
 #delete {
+ 
   display: flex;
   justify-content: center;
+  flex-direction: row;
   margin: 2vh auto;
-  font-size: 4vh;
+  font-size: 3vh;
+  font-family: "Rajdhani", sans-serif;
+
 }
+
+
 
 h1 {
   text-align: center;
+  font-family: "Rajdhani", sans-serif;
 }
 
 h2 {
   margin: 7vh 0 0 0;
+  font-family: "Rajdhani", sans-serif;
 }
 
 #productform {
@@ -222,30 +237,43 @@ input {
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-template-rows: 3vw 12vw 12vw 12vw 3vw 5vw;
+  margin:3vh auto;
+  width: 80%;
+  border-bottom: 2px solid grey;
 }
 
 .product-container > a > img {
-  max-width: 100%;
-  grid-row: 2/5;
-  grid-column: 1/2;
+  
+  grid-row: 3/5;
+  grid-column: 1;
+  
+  max-height: 30vw;
+  max-width: 37.5vw;
+ 
+ 
+  
 }
 #user-name {
   width: 93%;
-  justify-content: left;
+  justify-content: center;
 }
 
 #caption {
-  grid-row: 5/6
+  grid-row: 5/6;
+  position: relative;
+  
 }
 
 #caption {
-  display: block;
+ 
   width: 90%;
+  justify-content: center;
 }
 
 #caption > span {
   font-weight: bold;
   padding-right: 8px;
+  justify-content: center;
 }
 
 #like-form, #liked-icon, #like-count, #like-icon {
@@ -257,13 +285,21 @@ input {
 
 
 #like-count {
-  justify-content: right;
-  margin-right: 38px;
+  margin: -2vh 0 0 4vw;
+  position: relative;
+  
+  
+ 
+  
+ 
 }
 
 #liked-icon {
-  margin-right: 23px;
-  font-size: 3vw;
+  
+  box-shadow: none;
+  height: 7vw;
+
+  
 }
 /* #liked-icon:hover {
   cursor: pointer;
@@ -271,26 +307,32 @@ input {
 } */
 
 #like-icon {
-  font-size: 3vw;
-  height:4vw;
-  width: 4vw;
+  
+  height:3vw;
+  width: 3vw;
   background-color: rgba(255, 255, 255, 0);
   border: none;
+  margin: auto;
+  
 
 
 }
 #like-icon:hover {
   cursor: pointer;
   transform: scale(1.1);
+ 
 }
 
 #comment-icon {
   grid-row: 3/4;
   grid-column: 2/3;
-  background-color:rgba(98, 103, 121, 0.954);
-  padding: .25vh 1.5vh .25vh 1.5vh;
-  font-size: 2vw;
-  border: 1px solid black;
+  box-shadow:none;
+  width: 60%;
+height: 55%;
+display: block;
+margin: 2.25vh auto;
+
+
   
 
 }
@@ -314,8 +356,7 @@ input {
 }
 
 #price {
-  margin-left: 8px;
-  margin-right: 29px;
+ margin: auto;
 }
 
 #like-form {
@@ -331,11 +372,15 @@ input {
   
 }
 #cart-icon{
-  height:3vw;
-  width: 4vw;
-  font-size: 1.5vw;
-  background-color: rgba(0, 194, 149, 0.81);
-  border: 1px solid black;
+width: 55%;
+height: 50%;
+display: block;
+margin: auto;
+box-shadow: none;
+
+
+  
+  
  
 
 }
@@ -346,24 +391,28 @@ input {
 
 
 
-.product-container {
-  border-color: lightgray;
-  margin: 35px
-}
+
 
 #search {
   display: flex;
   justify-content: center;
   
+  
 }
 
 #searchbutt {
-  background-color:white;
-  border: 1px solid rgb(9, 0, 0);
+  margin: 2vh 0 0 0;
+  background-color:rgb(148, 127, 252);
+  border: none;
+  box-shadow: 0 4px 11px 1px rgba(0, 0, 0, 0.15);
 }
 
 #searchin {
-  border: 1px solid black;
+  margin: 2vh 1vh 0 0;
+  border: none;
+  width: 15vw;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 4px 11px 1px rgba(0, 0, 0, 0.15);
   
 }
 
@@ -371,5 +420,66 @@ input {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+}
+
+#smiley {
+  display: flex;
+  justify-content: center;
+  font-size: 10vw;
+}
+#comment-section {
+  
+  display: block;
+  margin: 1vw auto;
+  width: 70%;
+  padding: 0 3vw 3vw 3vw;
+  border-radius: 10px;
+  background-color:rgb(187, 210, 215);
+  
+}
+h4 {
+  display: block;
+  margin: 2vh 0 0 0;
+}
+
+h5 {
+  text-align: center;
+  
+}
+
+#commentbutt {
+  display: block;
+  background-color: rgb(83, 242, 218);
+  border: none;
+  box-shadow: 0 4px 11px 1px rgba(0, 0, 0, 0.25);
+  margin: 3vh auto;
+  color: black;
+  font-size: 1.5vw;
+  height: 3vw;
+}
+
+#detail-card {
+  
+  width: 55%;
+  margin: 1vw auto;
+  border-bottom: 1px solid darkgray;
+  
+
+  
+}
+#detail-card > p {
+  margin: 3vh auto;
+  font-size: 2vw;
+  
+
+}
+
+textarea {
+  height: 6vw;
+  width: 110%;
+}
+
+#commentform > label {
+  text-align: left;
 }
 

@@ -10,7 +10,7 @@
 
 <p><strong>@{{ product.user.username}}</strong> &nbsp; {{ product.caption }}</p>
 
-
+<div id="detail-card">
 <p>Description: {{ product.description}}</p>
 <p>${{ product.price }}</p>
 
@@ -18,7 +18,9 @@
 {% for tag in product.tags.all %}
 <p>{{ tag.hashtag }}</p>
 {% endfor %}
+</div>
 {% if user.is_authenticated %}
+<div id="detail-buttons">
     
         <a id="edit" href="{% url 'products_update' product.id %}">Edit</a>
         <a id="delete" href="{% url 'products_delete' product.id %}">Delete</a>
@@ -26,16 +28,17 @@
                 {% csrf_token %}
                 <button id="add" type="submit" class="btn">Add To Cart</button>
         </form>
-        <form action="{% url 'add_comment' product.id user.id %}" method="POST">
+        </div>
+        <form id= "commentform" action="{% url 'add_comment' product.id user.id %}" method="POST">
                 {% csrf_token %}
                 {{ comment_form.as_p }}
-                <input type="submit" class="btn" value="Add Comment">
+                <input id="commentbutt" type="submit" class="btn" value="Add Comment">
                 
         </form>
 
 {% endif %}
 {% for comment in product.comment_set.all %}
-<label>comment:<p>{{ comment.user.username }}</p> <p>{{ comment.text }} </p></label>
+<div id="comment-section"><h4>@{{ comment.user.username }}:</h4> <h5>{{ comment.text }} </h5></div>
 {% endfor %}
 
 
