@@ -5,36 +5,36 @@
 {% for item in feed %}
     
     <div class="product-container">
-        <p id="user-name">@{{ item.product.user}}</p>
+        <p id="user-name"><em>{{ item.product.name }}</em></p>
         <a href="{% url 'products_detail' item.product.id %}">
-            <img src="{{ item.product.photo_file }}">
+            <img id="prodimg" src="{{ item.product.photo_file }}">
         </a>
         <a id="product-name" href="{% url 'products_detail' item.product.id %}">
-            <p>{{ item.product.name }} <span id="price">${{ item.product.price }}</span></p>
+            <p> <span id="price">${{ item.product.price }}</span></p>
         </a>
         
         
         <p id="caption"><span id="username-spn">@{{ item.product.user}}</span> {{ item.product.caption }}</p>
         
-        <a id="comment-icon" href="{% url 'products_detail' item.product.id %}">💬</a>
+        <a id="comment-icon" href="{% url 'products_detail' item.product.id %}"><img id="comment-icon" src="https://i.imgur.com/cuUgeEv.png"></a>
 
         <form id='cart-form' action="{% url 'assoc_product' user.id item.product.id %}" method="POST">
             {% csrf_token %}
             
-            <input id='cart-icon' type="submit" value="✚ 🛒">
-        </form>
+            <input id='cart-icon' type="image" src="https://i.imgur.com/SUZxyyp.png">
+        </form> 
         
         {% if item.like_count %}
-            <p id="like-count">{{item.like_count}}</p>
+            <p id="like-count"><strong>{{item.like_count}}</strong></p>
         {% endif %}
     
         {% if item.user_liked %}
-            <p id="liked-icon">💕</p>
+            <p id="liked-icon"><img id="cart-icon" src="https://i.imgur.com/zMCkqXi.png"></p>
         {% else %}
             <form id='like-form' action="{% url 'add_like' item.product.id user.id %}" method="POST">
                 {% csrf_token %}
                 <!-- <button id="like-btn" type="submit" class="btn">Like</button> -->
-                <input id='like-icon' type="submit" value="❤️ "><span id="like-count-id">{{item.like_count}}</span>
+                <input id='like-icon' type="image" src="https://i.imgur.com/KHIHkv9.png"><span id="like-count-id">{{item.like_count}}</span>
             </form>
         {% endif %}
     </div>
