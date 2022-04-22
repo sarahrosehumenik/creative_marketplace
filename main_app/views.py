@@ -19,8 +19,11 @@ from .forms import CommentForm, SearchForm
 
 # VIEW FUNCTIONS----------------------------------------------------------------------------
 def home(request):
-    return render(request, 'home.html')
+    # return render(request, 'home.html')
+    return redirect('products_index')
 
+def about(request):
+    return render(request, 'about.html')
 
 def signup(request):
     error_message = ''
@@ -121,7 +124,7 @@ class ProductList(ListView):
                     user_liked = True
             feed.append({'product': product, 'like_count':like_count, 'user_liked': user_liked})
         #run algo on feed
-
+        feed.reverse() #reverse feed to show newest products at the top
         context['form'] = SearchForm()
         context['feed'] = feed
         return context
@@ -147,7 +150,7 @@ class ProductList(ListView):
     
 class ProductCreate(LoginRequiredMixin,CreateView):
     model = Product
-    fields = ['name','caption', 'description', 'price', 'quantity', 'photo_file', 'tags']
+    fields = ['name','caption', 'description', 'price', 'photo_file', 'tags']
     
 
     def form_valid(self, form):

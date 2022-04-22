@@ -26,13 +26,13 @@
     <header>Check Me Out</header>
     <aside>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a id="cart" href="{% url 'cart_detail' %}">My Cart</a></li>
-          <li><a href="/products">Check It</a></li>
+          <li><a href="/products">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
           {% if user.is_authenticated %}
-          <li><a href="{% url 'logout' %}">Log Out</a></li>
           <li><a href="{% url 'products_create' %}">Create Post</a></li>
+          <li><a id="cart" href="{% url 'cart_detail' %}">My Cart</a></li>
           <li><a href="{% url 'profile_likes' %}">My Likes</a></li>
+          <li><a href="{% url 'logout' %}">Log Out</a></li>
           
           {% else %}
           <li><a href="{% url 'signup' %}">Sign Up</a></li>

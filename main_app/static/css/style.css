@@ -192,15 +192,18 @@ input {
   box-shadow: 0 4px 11px 1px rgba(0, 0, 0, 0.25);
 }
 
-#removecart {
+#removecart, #checkout-btn {
   display: block;
-  width: 30%;
   height: 5vh;
   margin: 3vh auto;
   background-color: rgb(69, 86, 100);
   border: none;
   color: rgb(255, 255, 255);
   box-shadow: 0 4px 11px 1px rgba(0, 0, 0, 0.25);
+}
+
+#checkout-btn {
+  background-color: blueviolet;
 }
 
 #add {
@@ -363,3 +366,10 @@ input {
   border: 1px solid black;
   
 }
+
+#cart-btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
