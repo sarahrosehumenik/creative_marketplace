@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -16,41 +18,69 @@
       type="text/css"
       href="{% static 'css/style.css' %}"
     />
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
     <script src="https://js.stripe.com/v3/"></script>
+  
+   
+  
+  
   </head>
+ 
   <body>
       <div id="container">
       
-    <header>Check Me Out</header>
+
     <aside>
+      <header>Check Me Out </header>
+    
+     
         <ul>
-          <li><a href="/products">Home</a></li>
-          <li><a href="{% url 'about' %}">About</a></li>
+          <a href="/products"><img class="feed" id="nav-icon" src="https://i.imgur.com/urBuFS2.png"></a>
+          <a id="about" href="{% url 'about' %}"><img id="nav-icon" src="https://i.imgur.com/QWk2j8y.png"></a>
           {% if user.is_authenticated %}
-          <li><a href="{% url 'products_create' %}">Create Post</a></li>
-          <li><a id="cart" href="{% url 'cart_detail' %}">My Cart</a></li>
-          <li><a href="{% url 'profile_likes' %}">My Likes</a></li>
-          <li><a href="{% url 'logout' %}">Log Out</a></li>
+          <a href="{% url 'products_create' %}"><img id="nav-icon" src="https://i.imgur.com/LP8vBAm.png"></a>
+          <a id="cart" href="{% url 'cart_detail' %}"><img id="nav-icon" src="https://i.imgur.com/mr51KFs.png"></a>
+          <a href="{% url 'profile_likes' %}"><img id="nav-icon" src="https://i.imgur.com/TwfgEsY.png"></a>
+          <a href="{% url 'logout' %}"><img id="nav-icon" src="https://i.imgur.com/h2sFpUG.png"></a>
           
           {% else %}
-          <li><a href="{% url 'signup' %}">Sign Up</a></li>
-          <li><a href="{% url 'login' %}">Log In</a></li>
+          <a href="{% url 'signup' %}"><img id="nav-icon" src="https://i.imgur.com/GUDYvGo.png"></a>
+          <a href="{% url 'login' %}"><img id="nav-icon" src="https://i.imgur.com/7NNUwdo.png"></a>
           {% endif %}
             
         </ul>
-        <form id="search" action="{% url 'search' %}" method="POST">
-          {% csrf_token %}
-          <input id="searchin" name="search_input" placeholder="Title, tags or username!" type="text">
-          <button id="searchbutt"type="submit">Search</button>
-        </form>
+        
+       
     </aside>
-   
+    <div id="header-background"><form id="search" action="{% url 'search' %}" method="POST">
+      {% csrf_token %}
+      <input id="searchin" name="search_input" placeholder="Title, tags or username!" type="text">
+      <button id="searchbutt"type="submit">Search</button>
+    </form></div>
     <main>{% block content %} {% endblock %}</main>
     <footer>
       <h2>All Rights Reserved, &copy; 2022 CREATIVE MARKET &nbsp;</h2>
     </footer>
     </div>
+
+    <script defer>
+
+      let about = document.getElementById("about")
+      
+      let body = document.querySelector("body")
+      
+      about.addEventListener("click", myClick); {
+
+      }
+
+      function myClick() {
+       body.style.backgroundColor = "red";
+      }
+     
+        </script>
+  
+
   </body>
 </html>

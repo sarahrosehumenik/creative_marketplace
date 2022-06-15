@@ -4,13 +4,18 @@
 <h1>Cart</h1>
 {% if cart_list.count %}
     {% for product in cart_list %}
+   
     <a href="{% url 'products_detail' product.id %}">
-        <p>Name: {{ product.name }}</p>
+        <h3>Name: {{ product.name }}</h3>
     </a>
-    <p>Price: {{ product.price }}</p>
+    <h3>Price: {{ product.price }}</h3>
+
+
     {% endfor %}
+
 {% else %}
     <h3>Add products to your cart..</h3>
+
 {% endif %}
 
 {% endblock %}

@@ -2,13 +2,16 @@
 {% block content %}   
 
 {% if products.count %}
-    <h1>Cart</h1>
+  
+    <h1 id="cart-head">Cart</h1><br>
     {% for product in products %}
+    <div id="cart-container">
+        <a href="{% url 'products_detail' product.id %}">
     <img src="{{ product.photo_file }}">
-    <a href="{% url 'products_detail' product.id %}">
-        <p>Name: {{ product.name }}</p>
+   
+        <h3>Title:<em>"{{ product.name }}"</em></h3>
     </a>
-    <p>Price: {{ product.price }}</p>
+    <h3>Price: ${{ product.price }}</h3>
 
     <div id="cart-btns">
         {% if product.stripe_product_id %}
@@ -22,6 +25,7 @@
             <button id="removecart" type="submit" class="btn">Remove</button>
         </form>
     </div>
+</div>
     {% endfor %}
 {% else %}
     <h1>Your cart is empty...<a href="{% url 'products_index' %}">Continue Shopping</a></h1>

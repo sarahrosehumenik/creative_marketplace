@@ -1,36 +1,28 @@
 {% extends 'base.html'%}
 {% block content %}
+
+<h1 id="like-header">My Likes</h1>
 {% for product in products %}
 
-<h1>My Likes</h1>
+
 
 <div class="product-container">
-    <p id="user-name">@{{ product.user }}</p>
+   
+        <p id="user-name"><em>"{{ product.name }}" </em> &nbsp; ${{ product.price }}</p>
+  
+   
     <a href="{% url 'products_detail' product.id %}">
-        <img src="{{ product.photo_file }}">
+        <img id="like-image" src="{{ product.photo_file }}">
     </a>
-    <a id="product-name" href="{% url 'products_detail' product.id %}">
-        <p>{{ product.name }} <span id="price">${{ product.price }}</span></p>
-    </a>
+  
     
     
     <p id="caption"><span id="username-spn">@{{ product.user}}</span> {{ product.caption }}</p>
+  
     
-    <a id="comment-icon" href="{% url 'products_detail' product.id %}">💬</a>
 
-    <form id='cart-form' action="{% url 'assoc_product' user.id product.id %}" method="POST">
-        {% csrf_token %}
-        
-        <input id='cart-icon' type="submit" value="✚ 🛒">
-    </form>
-    
-    
-    <p id="like-count">{{like_count}}</p>
-
-    <p id="liked-icon">💕</p>
-    
 </div>
-
 {% endfor %}
+
 {% endblock %}
 
