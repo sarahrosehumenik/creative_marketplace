@@ -179,17 +179,7 @@ footer {
   font-family: "Rajdhani", sans-serif;
 }
 
-#edit,
-#delete {
- 
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  margin: 2vh auto;
-  font-size: 3vh;
-  font-family: "Rajdhani", sans-serif;
 
-}
 
 
 
@@ -225,7 +215,22 @@ h2 {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  font-size: 2.5vh;
+  width: 70vh;
+}
+
+#signup > ul > li {
+  font-size: .25vh;
+  text-decoration: none;
+ 
+  margin: auto;
+  visibility: hidden;
+  position: absolute;
+}
+#signup > ul {
+  display: flex;
+  flex-direction: column;
+  width: 70vh;
+  margin: auto;
 }
 
 input {
@@ -234,17 +239,22 @@ input {
 }
 
 .helptext {
-  font-size: 2vh;
+  visibility: hidden;
 }
+input#id_password2 {
+  margin: -2vh 0 0 12vh;
+}
+
+
 
 #signupbutt {
   width: 30%;
   height: 5vh;
-  margin: 3vh auto;
-  background-color: rgb(69, 86, 100);
+  margin: 1vh auto;
+  background-color: rgba(247, 6, 6, 0.822);
   border: none;
   color: rgb(255, 255, 255);
-  box-shadow: 0 4px 11px 1px rgba(0, 0, 0, 0.25);
+  
 }
 #login {
   display: flex;
@@ -255,10 +265,10 @@ input {
   width: 30%;
   height: 5vh;
   margin: 3vh auto;
-  background-color: rgb(69, 86, 100);
+  background-color: rgba(14, 184, 142, 0.842);
   border: none;
-  color: rgb(255, 255, 255);
-  box-shadow: 0 4px 11px 1px rgba(0, 0, 0, 0.25);
+  color: rgb(9, 9, 9);
+  
 }
 
 #removecart, #checkout-btn {
@@ -276,21 +286,11 @@ input {
   background-color: rgba(17, 255, 215, 0.664);
 }
 
-#add {
-  display: block;
-  width: 30%;
-  height: 5vh;
-  margin: 3vh auto;
-  background-color: rgb(69, 86, 100);
-  border: none;
-  color: rgb(255, 255, 255);
-  box-shadow: 0 4px 11px 1px rgba(0, 0, 0, 0.25);
-}
 
 
 .product-container {
 
- 
+ text-align:center;
   height: 76vh;
   border: 2px solid rgb(0, 0, 0);
   width: 70vh;
@@ -313,6 +313,21 @@ input {
  
   
 }
+.product-container > img {
+  
+  grid-row: 1;
+  grid-column: 2;
+  box-shadow: 0 4px 11px 1px rgba(0, 0, 0, 0.164);
+  max-height: 55vh;
+  max-width: 65vh;
+ padding: 3vh;
+ border: 1px solid black;
+ background-color: white;
+ 
+  
+}
+
+
 #user-name {
   width: 93%;
   margin: 2vh auto;
@@ -410,9 +425,13 @@ input {
   background-color: rgba(255, 255, 255, 0.336);
   height: 85vh;
   margin: auto;
+  padding: 0 2vh 0 2vh;
   border-radius: 3px;
   border: 1px solid black;
+  text-align: center;
 }
+
+
 
 select#id_tags {
   width: 40vh;
@@ -471,16 +490,7 @@ h3 {
 }
 
 
-#comment-section {
-  
-  display: block;
-  margin: 1vw auto;
-  width: 70%;
-  padding: 0 3vw 3vw 3vw;
-  border-radius: 10px;
-  background-color:rgb(187, 210, 215);
-  
-}
+
 h4 {
   display: block;
   margin: 2vh 0 0 0;
@@ -491,32 +501,9 @@ h5 {
   
 }
 
-#commentbutt {
-  display: block;
-  background-color: rgb(83, 242, 218);
-  border: none;
-  box-shadow: 0 4px 11px 1px rgba(0, 0, 0, 0.25);
-  margin: 3vh auto;
-  color: black;
-  font-size: 1.5vw;
-  height: 3vw;
-}
 
-#detail-card {
-  
-  width: 55%;
-  margin: 1vw auto;
-  border-bottom: 1px solid darkgray;
-  
 
-  
-}
-#detail-card > p {
-  margin: 3vh auto;
-  font-size: 2vw;
-  
 
-}
 
 textarea {
   height: 6vw;
@@ -532,7 +519,7 @@ textarea {
   border: 2px solid rgb(0, 0, 0);
   width: 70vh;
   margin: 2vh auto;
-  background-color: rgba(0, 255, 115, 0.514);
+  background-color: rgba(255, 255, 255, 0.322);
   border-radius: 3px;
   text-align: center;
   padding: 0 3vh 0 3vh;
@@ -559,13 +546,120 @@ textarea {
 
 }
 
+#detail-img {
+  max-height: 70vh;
+  max-width: 70vh;
+  margin: auto;
+}
+#detail-card {
+  height: 70vh; 
+  width: 60vh;
+ color:white;
+  display: flex;
+  flex-direction: column;
+  margin:auto;
+  text-align: center;
+  border-radius: 3px;
+  margin: 3vh auto;
+  font-size: 3vh;
+  padding: 5vh 0 0 0;
+  
+}
+
+#commentform {
+  width: 100%;
+ margin: 9vh 0 0 5vh;
+
+
+
+
+}
+
+#commentbutt {
+  float: right;
+  margin: -16vh 15vh 0 0;
+  background-color:rgba(255, 255, 255, 0.253);
+  border: none;
+  height: 5vh;
+  width: 20vh;
+}
+#commentform > p > label {
+  visibility: hidden;
+}
+
+
+textarea#id_text {
+  width: 90%;
+  margin: -3vh 0 15vh 0;
+}
+
+#comment-section {
+  display: flex;
+  flex-direction:column;
+  margin:  auto;
+  width: 100vh;
+  border: 1px solid black;
+ 
+ 
+
+   
+}
+#comment-container {
+background-color: white;
+margin: auto;
+overflow-y: scroll;
+max-height: 40vh;
+margin:  auto;
+
+}
+
+#edit,
+#delete, #add {
+ 
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin: 2vh auto;
+  font-size: 3vh;
+  
+
+}
+#edit {
+  background-color:rgba(253, 255, 254, 0.479);
+
+}
+#delete {
+  background-color:rgba(255, 254, 254, 0.735);
+}
+
+#add {
+  background-color:rgba(0, 0, 0, 0.795);
+  border: none;
+  color: white;
+}
+
+#delete-container {
+  text-align:center;
+  height: 76vh;
+  border: 2px solid rgb(0, 0, 0);
+  width: 70vh;
+  margin: 2vh auto;
+  background-color: rgba(255, 255, 255, 0.336);
+  border-radius: 3px;
+}
+#yes-delete {
+  background-color: rgba(255, 0, 0, 0.774);
+  border: none;
+  margin: 2vh auto;
+}
+
 ::-webkit-scrollbar {
   width: 20px;
 }
 
 
 ::-webkit-scrollbar-track {
-  background: rgb(209, 208, 208);
+  background: rgb(255, 255, 255);
   
 }
 
@@ -577,5 +671,5 @@ textarea {
 
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(209, 209, 209);
+  background: rgb(227, 1, 1);
 }

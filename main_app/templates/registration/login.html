@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-
+<div id="post">
 <h1>Log In</h1>
 
 <!-- Add the login form -->
@@ -10,7 +10,7 @@
   <input id="loginbutt" type="submit" class="btn" value="login">
   <input type="hidden" name="next" value="{{ next }}">
 </form>
-
+</div>
 {% endblock %}
 
 <!-- this 'next' value is a feature of Django's authentication that will automatically redirect a user that tries to access a protected 

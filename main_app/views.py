@@ -87,6 +87,7 @@ def profile_likes(request):
     for like in likes:
         liked_product = Product.objects.get(id = like.product.id)
         products.append(liked_product)
+        products.reverse()
     return render(request, 'profile/likes.html', { 'likes': likes, 'products': products })
 
 

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-
+<div id="post">
 <h1>Sign Up</h1>
 
 {% if error_message %}<p class="red-text">{{ error_message }}</p>{% endif %}
@@ -10,11 +10,12 @@
   {{ form.as_p }}
   <input id="signupbutt" type="submit" class="btn" value="signup">
 </form>
-
+</div>
 <script>
+  const span = document.querySelector("span")
   const formText = document.querySelector('.helptext')
   formText.innerHTML = ""
-
+  span.innerHTML = ""
 </script>
 
 {% endblock %}
