@@ -20,7 +20,7 @@ environ.Env.read_env()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Our sites base url. CHANGE BEFORE DEPLOYING
-BASE_URL = 'https://checkmeout-marketplace.herokuapp.com'
+BASE_URL = 'localhost:8000'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -74,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'creative_marketplace.wsgi.application'
+WSGI_APPLICATION = 'checkme-out.wsgi.application'
 
 
 # Database

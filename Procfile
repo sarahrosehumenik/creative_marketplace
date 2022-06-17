@@ -1,1 +1,1 @@
-web: gunicorn creative_marketplace.wsgi
+web: gunicorn checkme-out.wsgi
