@@ -74,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'checkme-out.wsgi.application'
+WSGI_APPLICATION = 'creative_marketplace.wsgi.application'
 
 
 # Database
