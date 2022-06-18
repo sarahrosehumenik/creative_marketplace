@@ -74,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'checkme-out.wsgi.application'
+WSGI_APPLICATION = 'creative_marketplace.wsgi.application'
 
 
 # Database
@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'checkme-out.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'checkme-out',
+        'NAME': 'creative_marketplace',
     }
 }
 
