@@ -572,6 +572,7 @@ textarea {
 #commentform {
   width: 100%;
  margin: 9vh 0 0 5vh;
+ height: 20vh;
 
 
 
@@ -580,22 +581,36 @@ textarea {
 
 #commentbutt {
   float: right;
-  margin: -16vh 15vh 0 0;
+  margin: 10vh 15vh 0 0;
   background-color:rgba(255, 255, 255, 0.253);
   border: none;
   height: 5vh;
   width: 20vh;
+  z-index: 1;
 }
 #commentform > p > label {
   visibility: hidden;
+  z-index: -3;
 }
-
-
+#commentform > p {
+ height: 2px;
+}
+form#commentform {
+  height: 10vh;
+}
 textarea#id_text {
   width: 90%;
   margin: -3vh 0 15vh 0;
+  z-index: -20;
+  height: 10vh;
 }
 
+#id_text {
+  height: 2px;
+}
+textarea {
+  z-index: -1;
+}
 #comment-section {
   display: flex;
   flex-direction:column;
@@ -612,7 +627,7 @@ background-color: white;
 margin: auto;
 overflow-y: scroll;
 max-height: 40vh;
-margin:  auto;
+margin: 20vh auto;
 
 }
 
