@@ -192,7 +192,7 @@ class ProductDetail(DetailView):
 
 class ProductUpdate(LoginRequiredMixin, UpdateView):
     model = Product
-    fields = ['caption', 'description', 'price', 'quantity',] #allowing quantity updates may cause problems later...
+    fields = ['caption', 'description', 'price', 'quantity','photo_file','tags'] #allowing quantity updates may cause problems later...
 
 class ProductDelete(LoginRequiredMixin, DeleteView):
     model = Product
@@ -215,8 +215,8 @@ class CreateCheckoutSessionView(View):
                     },
                 ],
                 mode='payment',
-                success_url=settings.BASE_URL + '/payments/success/',
-                cancel_url=settings.BASE_URL + '/payments/cancel/',
+                success_url=settings.BASE_URL + 'payments/success/',
+                cancel_url=settings.BASE_URL + 'payments/cancel/',
             )
         except Exception as e:
             print(f'\n\n{e}\n\n')

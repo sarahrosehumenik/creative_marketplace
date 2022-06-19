@@ -20,7 +20,7 @@ environ.Env.read_env()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Our sites base url. CHANGE BEFORE DEPLOYING
-BASE_URL = 'https://checkme-out.herokuapp.com/'
+BASE_URL = 'https://checkme-out.herokuapp.com'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
