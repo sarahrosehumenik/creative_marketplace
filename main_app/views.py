@@ -215,8 +215,8 @@ class CreateCheckoutSessionView(View):
                     },
                 ],
                 mode='payment',
-                success_url=settings.BASE_URL + 'payments/success/',
-                cancel_url=settings.BASE_URL + 'payments/cancel/',
+                success_url=settings.BASE_URL + '/payments/success/',
+                cancel_url=settings.BASE_URL + '/payments/cancel/',
             )
         except Exception as e:
             print(f'\n\n{e}\n\n')
