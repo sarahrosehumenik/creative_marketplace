@@ -701,14 +701,14 @@ aside {
 ul {
   margin: 0 0 0 -3vh;
 }
-body {
-  width: 110%;
+main {
+ margin-left: 10vh;
 }
   #product-icons {
-    width: 50vh;
+    width: 100%;
   }
 .product-container {
-  width: 50vh;
+  width: 100%;
 }
 
 .product-container > a > img {
