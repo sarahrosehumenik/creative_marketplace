@@ -691,3 +691,17 @@ margin: 20vh auto;
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(227, 1, 1);
 }
+
+@media (max-width: 400px) {
+aside {
+  width: 12vh;
+}
+
+ul {
+  margin: 0 0 0 -3vh;
+}
+
+.product-container {
+  width: 50vh;
+}
+}
