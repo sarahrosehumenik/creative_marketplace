@@ -710,6 +710,10 @@ body {
 .product-container {
   width: 50vh;
 }
+
+.product-container > img {
+  max-width: 45vh;
+}
   }
 
 
