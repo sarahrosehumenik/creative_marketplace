@@ -711,8 +711,8 @@ body {
   width: 50vh;
 }
 
-.product-container > img {
-  max-width: 45vh;
+.product-container > a > img {
+  max-width: 30vh;
 }
   }
 
