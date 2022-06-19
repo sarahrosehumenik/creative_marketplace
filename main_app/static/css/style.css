@@ -710,7 +710,10 @@ main {
 .product-container {
   width: 100%;
 }
-
+header{
+  margin-left: 2vh;
+  font-size: 3vh;
+}
 .product-container > a > img {
   max-width: 40vh;
 }
