@@ -692,7 +692,7 @@ margin: 20vh auto;
   background: rgb(227, 1, 1);
 }
 
-@media (max-width: 400px) {
+/* @media (max-width: 400px) {
 aside {
   width: 12vh;
   height: 170vh;
@@ -702,7 +702,7 @@ ul {
   margin: 0 0 0 -3vh;
 }
 main {
- margin-top: 6vh;
+ margin-top: 7vh;
  margin-left: 10vh;
 }
   #product-icons {
@@ -717,7 +717,8 @@ header{
 }
 .product-container > a > img {
   max-width: 40vh;
+  max-height: 50vh;
 }
-  }
+  } */
 
 
