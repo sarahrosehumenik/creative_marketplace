@@ -700,8 +700,15 @@ aside {
 ul {
   margin: 0 0 0 -3vh;
 }
-
+body {
+  width: 110%;
+}
+  #product-icons {
+    width: 50vh;
+  }
 .product-container {
   width: 50vh;
 }
-}
+  }
+
+
