@@ -16,7 +16,9 @@
         
         
         <p id="caption"><span id="username-spn">@{{ item.product.user}}</span> {{ item.product.caption }}</p>
-<div id="product-icons">
+<div id="product-icons"> 
+    
+    {% if user.is_authenticated %}
         <a id="comment-icon" href="{% url 'products_detail' item.product.id %}"><img id="comment-icon" src="https://i.imgur.com/RQ0Nn0M.png"></a>
         {% if user.is_authenticated %}
             <form id='cart-form' action="{% url 'assoc_product' user.id item.product.id %}" method="POST">
@@ -31,14 +33,17 @@
                     <input id='cart-icon' type="image" src="https://i.imgur.com/SUZxyyp.png">
                 </form>
         {% endif %}
-
+        {% endif %}
+        {% if user.is_authenticated %}
         {% if item.like_count %}
             <p id="like-count"><strong>{{item.like_count}}</strong></p>
         {% endif %}
-    
+        {% endif %}
+        {% if user.is_authenticated %}
         {% if item.user_liked %}
             <p id="liked-icon"><img id="cart-icon" src="https://i.imgur.com/xcMdWiE.png"></p>
         {% else %}
+        {% endif %}
             {% if user.is_authenticated %}
                 <form id='like-form' action="{% url 'add_like' item.product.id user.id %}" method="POST">
                     {% csrf_token %}
