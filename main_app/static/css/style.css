@@ -716,8 +716,14 @@ header{
   font-size: 3vh;
 }
 .product-container > a > img {
-  max-width: 35vh;
+  max-width: 37vh;
   max-height: 40vh;
+}
+
+#like-image {
+  max-width: 37vh;
+  max-height: 40vh;
+
 }
   } 
 
