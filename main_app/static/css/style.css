@@ -729,6 +729,11 @@ header{
 #detail-img {
   max-height: 50vh;
   max-width: 37vh;
+  margin: 5vh auto;
+}
+
+#comment-section {
+  width: 50vh;
 }
   } 
 
