@@ -735,5 +735,9 @@ header{
 #comment-section {
   width: 50vh;
 }
+
+#post {
+  width: 100%;
+}
   } 
 
