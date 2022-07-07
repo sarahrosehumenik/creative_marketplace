@@ -738,6 +738,24 @@ header{
 
 #post {
   width: 100%;
+  margin: 2vh auto;
+  
+}
+#productform {
+  width: 30vh;
+}
+
+#post > form > table > tbody {
+  width: 30vh
+}
+input {
+  width: 20vh;
+}
+textarea#id_description {
+  width: 20vh;
+}
+select#id_tags {
+  width: 20vh;
 }
   } 
 
