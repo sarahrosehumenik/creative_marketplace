@@ -3,24 +3,16 @@
 
 <h1 id="like-header">My Likes</h1>
 {% for product in products %}
-
-
-
 <div class="product-container">
-   
-        <p id="user-name"><em>"{{ product.name }}" </em> &nbsp; ${{ product.price }}</p>
-  
-   
     <a href="{% url 'products_detail' product.id %}">
-        <img id="like-image" src="{{ product.photo_file }}">
+        <img 
+        id="like-image" 
+        src="{{ product.photo_file }}">
     </a>
-  
-    
-    
-    <p id="caption"><span id="username-spn">@{{ product.user}}</span> {{ product.caption }}</p>
-  
-    
-
+   <p id="user-name">{{ product.name }}</p>
+   <p> ${{ product.price }}</p>
+    <p id="caption">@{{ product.user}}</p> 
+    <p>{{ product.caption }}</p>
 </div>
 {% endfor %}
 

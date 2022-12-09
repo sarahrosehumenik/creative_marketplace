@@ -7,8 +7,15 @@
 <form id="login" method="post" action="{% url 'login' %}">
   {% csrf_token %}
   {{ form.as_p }}
-  <input id="loginbutt" type="submit" class="btn" value="login">
-  <input type="hidden" name="next" value="{{ next }}">
+  <input 
+  id="loginbutt" 
+  type="submit" 
+  class="btn" 
+  value="login">
+  <input 
+  type="hidden" 
+  name="next" 
+  value="{{ next }}">
 </form>
 </div>
 {% endblock %}

@@ -2,49 +2,48 @@
 {% block content %}   
 
 
-
-
-
 <img id="detail-img" src="{{ product.photo_file }}">
 <div id="detail-card">
-<p>Title: {{ product.name }}</p>
-<p><strong>@{{ product.user.username}}</strong> &nbsp; {{ product.caption }}</p>
-
-
-<p>Description: {{ product.description}}</p>
-<p>${{ product.price }}</p>
-
-
-{% for tag in product.tags.all %}
-<p>{{ tag.hashtag }}</p>
-{% endfor %}
-
-{% if user.is_authenticated %}
-<div id="detail-buttons">
-    
-        <a id="edit" href="{% url 'products_update' product.id %}">Edit</a>
-        <a id="delete" href="{% url 'products_delete' product.id %}">Delete</a>
-        <form action="{% url 'assoc_product' user.id product.id %}" method="POST">
-                {% csrf_token %}
-                <button id="add" type="submit" class="btn">Add To Cart</button>
-        </form>
+        <p>Title: {{ product.name }}</p>
+        <p>@{{ product.user.username}}</p>
+        <p>{{ product.caption }}</p>
+        <p>Description: {{ product.description}}</p>
+        <p>${{ product.price }}</p>
+        {% for tag in product.tags.all %}
+        <p>{{ tag.hashtag }}</p>
+        {% endfor %}
 </div>
-        </div>
- 
-        <form id= "commentform" action="{% url 'add_comment' product.id user.id %}" method="POST">
-  
-                {% csrf_token %}
-                {{ comment_form.as_p }}
-                <input id="commentbutt" type="submit" class="btn" value="Add Comment">
-                
-        </form>
+       
+{% if user.id == product.user_id %}
+ <a id="edit" href="{% url 'products_update' product.id %}">Edit</a>
+ <a id="delete" href="{% url 'products_delete' product.id %}">Delete</a>
+ {% endif %}
+ <form 
+  action="{% url 'assoc_product' user.id product.id %}" 
+  method="POST">
+  {% csrf_token %}
+     <button id="add" type="submit" class="btn">Add To Cart</button>
+ </form>
+ <form 
+   id="commentform" 
+   action="{% url 'add_comment' product.id user.id %}" 
+   method="POST">
+   {% csrf_token %}
+   {{ comment_form.as_p }}
+     <input 
+     id="commentbutt" 
+     type="submit" 
+     class="btn" 
+     value="Add Comment">
+</form>
 
-{% endif %}<div id="comment-container">
 {% for comment in product.comment_set.all %}
-
-<div id="comment-section"><h4>@{{ comment.user.username }}:</h4> <h5>{{ comment.text }} </h5></div>
-
-{% endfor %}
+<div id="comment-container">
+ <div id="comment-section">
+  <p>@{{ comment.user.username }}:</p> 
+  <p>{{ comment.text }} </p>
+  {% endfor %}
+ </div>
 </div>
 
 
