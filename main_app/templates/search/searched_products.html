@@ -2,36 +2,37 @@
 {% block content %}
 
 
+<div class="product-container">
 {% for product in products_by_tag %}
-<div class="product-container">
-    <p><em>"{{product.name}}"</em></p>
-    
-    <a href="{% url 'products_detail' product.id %}">
-    <img src="{{product.photo_file}}" alt="image of product">
-    </a>
+    <div class="product-card">
+      <a href="{% url 'products_detail' product.id %}">
+       <img class="product-img" src="{{product.photo_file}}" alt="image of product">
+        <p class="product-name">{{product.name}}</p>
+      </a>
+    </div>
+    {% endfor %}
 </div>
-{% endfor %}
 
-
-{% for product in products_by_creator %}
 <div class="product-container">
-    <p><em>"{{product.name}}"</em></p>
-
-    <a href="{% url 'products_detail' product.id %}">
-        <img src="{{product.photo_file}}" alt="image of product">
-        </a>
+{% for product in products_by_creator %}  
+   <div class="product-card">
+      <a href="{% url 'products_detail' product.id %}">
+        <img class="product-img" src="{{product.photo_file}}" alt="image of product">
+        <p class="product-name">{{product.name}}</p>
+      </a>
+    </div>
+    {% endfor %}
 </div>
-{% endfor %}
 
+<div class="product-container">
 {% for product in products_by_name %}
-<div class="product-container">
-    <p><em>"{{product.name}}"</em></p>
-    
+  <div class="product-card">
     <a href="{% url 'products_detail' product.id %}">
-        <img src="{{product.photo_file}}" alt="image of product">
-        </a>
+        <img class="product-img" src="{{product.photo_file}}" alt="image of product">
+        <p class="product-name">{{product.name}}</p>
+    </a>
+  </div>
+  {% endfor %}
 </div>
-
-{% endfor %}
 
 {% endblock %}

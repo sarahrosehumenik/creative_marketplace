@@ -1,20 +1,22 @@
 {% extends 'base.html'%}
 {% block content %}
 
-<h1 id="like-header">My Likes</h1>
-{% for product in products %}
+<h1 class="profile-user">@{{user.username}}</h1>
+<h1 class="like-header">Likes</h1>
 <div class="product-container">
+{% for product in products %}
+<div class="product-card">
     <a href="{% url 'products_detail' product.id %}">
         <img 
-        id="like-image" 
-        src="{{ product.photo_file }}">
+        class="product-img"
+        src="{{ product.photo_file }}"/>
     </a>
-   <p id="user-name">{{ product.name }}</p>
-   <p> ${{ product.price }}</p>
-    <p id="caption">@{{ product.user}}</p> 
-    <p>{{ product.caption }}</p>
+   <p class="product-name">{{ product.name }}</p>
+  
+    <p class="product-user">@{{ product.user}}</p> 
 </div>
-{% endfor %}
+    {% endfor %}
+</div>
 
 {% endblock %}
 

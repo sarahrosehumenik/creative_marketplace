@@ -2,33 +2,32 @@
 {% block content %}   
 
 {% if products.count %}
-  
-    <h1 id="cart-head">Cart</h1><br>
+<h1 class="cart-title">Cart</h1>
+<div class="product-container">
     {% for product in products %}
-    <div id="cart-container">
+    <div class="product-card">
         <a href="{% url 'products_detail' product.id %}">
-    <img src="{{ product.photo_file }}">
-   
-        <h3>Title:<em>"{{ product.name }}"</em></h3>
-    </a>
-    <h3>Price: ${{ product.price }}</h3>
+          <img class="product-img"src="{{ product.photo_file }}">
+          <p class="product-name">"{{ product.name }}"</p>
+        </a>
 
-    <div id="cart-btns">
+    <div class="cart-btns">
         {% if product.stripe_product_id %}
             <form action="{% url 'create-stripe-checkout-session' product.stripe_price_id %}" method="POST">
                 {% csrf_token %}
-                <button id="checkout-btn" type="submit">Checkout</button>
+                <button type="submit">Checkout</button>
             </form>
         {% endif %}
         <form action="{% url 'unassoc_product' user.id product.id %}" method="POST">
             {% csrf_token %}
-            <button id="removecart" type="submit" class="btn">Remove</button>
+            <button class="remove-btn" type="submit">Remove</button>
         </form>
     </div>
 </div>
-    {% endfor %}
+{% endfor %}
+</div>
 {% else %}
-    <h1>Your cart is empty...<a href="{% url 'products_index' %}">Continue Shopping</a></h1>
+    <h1 class="empty-message">{{user.username}}, Your cart is empty...<a class="empty-link" href="{% url 'products_index' %}">Continue Shopping</a></h1>
 {% endif %}
 
 {% endblock %}

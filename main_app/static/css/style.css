@@ -5,7 +5,9 @@ body {
   padding: 0;
 }
 
-nav {
+
+
+/* nav {
   height: 65px;
   width: 100%;
   display: flex;
@@ -26,12 +28,9 @@ nav {
 
 .nav-link:hover {
   color: rgb(59, 85, 79);
-}
+} */
 
-.search-container {
-  margin: 1vh;
-}
-
+/* 
 .search-input {
   border: 1px solid black;
   border-radius: 30px;
@@ -49,7 +48,7 @@ nav {
 
 .search-btn:active {
   transform: scale(0.95)
-}
+} */
 main {
   height: 100%;
   width: 100%;
@@ -66,8 +65,8 @@ main {
 
 .product-card {
 position: relative;
-width: 200px;
-height: 310px;
+width: 250px;
+height: 360px;
 border-radius: 20px;
 margin: 1vh;
 }
@@ -97,7 +96,7 @@ display: block;
 
 .product-name {
   position: absolute;
-  top: 0;
+  top: 10px;
   left: 10px;
   color: white;
   background-color: rgba(0, 0, 0,.7);
@@ -137,7 +136,7 @@ display: block;
 
 .comment-btn {
   position: absolute;
-  bottom: 60px;
+  bottom: 65px;
   left: 10px;
   text-decoration: none;
   color: white;
@@ -156,7 +155,7 @@ display: block;
 .like-btn {
   position: absolute;
   right: 10px;
-  bottom: 60px;
+  bottom: 65px;
   font-family: Arial, Helvetica, sans-serif;
   border-radius: 30px;
   border:none;
@@ -181,3 +180,313 @@ display: block;
   padding:5px;
 }
 
+/* product list page and base html ^ */
+/* cart  */
+
+.cart-title {
+  text-align: center;
+  font-family:Arial, Helvetica, sans-serif;
+}
+.empty-message {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin: 5vh auto;
+  font-size: 20px;
+}
+
+.empty-link {
+  color:rgb(67, 60, 193);
+}
+
+
+.remove-btn {
+  position: absolute;
+  bottom: 10px;
+  /* left: 10px; */
+  color: rgb(255, 255, 255);
+  height: 30px;
+  background-color: rgb(189, 0, 0);
+  border-radius: 30px;
+  border: none;
+  font-size: 12px ;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  display:none;
+  cursor: pointer;
+}
+
+.remove-btn:active {
+  transform: scale(0.95);
+}
+
+.product-card:hover .remove-btn {
+  display: block;
+}
+
+/* detail */
+
+.detail-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detail-card {
+  height: 100%;
+  width: 95%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: row;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 15px, rgba(17, 17, 26, 0.1) 0px 16px 45px, rgba(17, 17, 26, 0.1) 0px 24px 60px;
+  margin-bottom: 5vh;
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px;
+  position: relative;
+}
+
+.img-container {
+  max-width: 50%;
+  height: 100%;
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px;
+}
+
+.modal-btn {
+  display: flex;
+  flex-direction: center;
+  align-items: center;
+  height:45px;
+  width: 45px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  bottom:20px;
+  right: 20px;
+  border: none;
+}
+
+.modal-btn:hover {
+  background-color:rgb(208, 208, 208);
+}
+
+.modal-icon {
+  margin: auto;
+  height: 20px;
+  width: 20px;
+}
+
+.detail-img {
+ object-fit: contain;
+ max-height: 550px;
+ width:100%;
+ border-radius: 30px 0 0 30px;
+}
+
+.info-container {
+  max-width: 60%;
+  padding: 20px;
+  
+
+}
+
+.detail-price {
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.detail-title {
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 40px;
+  margin: 0;
+  font-weight: 400;
+  padding-bottom: 10px;
+  line-height: 1;
+}
+
+.detail-username {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: rgb(85, 85, 85);
+
+}
+
+.detail-caption {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 5px;
+  color: grey;
+  font-weight: 200;
+}
+
+.description-label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  margin-top: 5px;
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+.detail-description {
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: 13px;
+  margin-top: 5px;
+  width:98%;
+  color: rgb(85, 85, 85);
+}
+
+.tag-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  
+}
+
+.detail-hashtag {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(221, 255, 0);
+  padding: 3px;
+  color: rgb(0, 0, 0);
+  margin-right: 10px;
+  flex-wrap: wrap;
+}
+
+.detail-cart-btn {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  color: rgb(255, 255, 255);
+  height: 30px;
+  background-color: rgb(67, 60, 193);
+  border-radius: 30px;
+  border: none;
+  font-size: 12px ;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.detail-cart-btn:active {
+  transform: scale(0.95)
+}
+
+.detail-comment-form {
+  margin-top: 50px;
+  width: 98%;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.detail-comment-form > p > input[type="text" i] {
+  width: 100%;
+  height: 5vh;
+  border-radius: 30px;
+  border: .5px solid grey;
+}
+
+.detail-comment-btn {
+  height: 5vh;
+  border: none;
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  padding: 7px;
+  border-radius: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  cursor:pointer;
+}
+
+.detail-comment-btn:active {
+  transform:scale(0.95);
+
+}
+
+#all-comments-btn {
+  background: none;
+  border-radius:30px;
+  box-shadow: none;
+  margin-top:  10px;
+}
+
+#comment-section {
+  border: none;
+  width: 290px;
+}
+
+.comment-username {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+font-weight: 700;
+}
+
+.comment-text {
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-size: 15px;
+}
+
+
+.modal-dialog {
+  
+  width: 700px;
+}
+
+.modal-img {
+  width: 460px;
+}
+
+/* profile */
+
+.profile-user{
+  text-align: center;
+  font-size: 30px;
+  margin: 10px;
+}
+.like-header {
+  text-align: center;
+  font-size: 20px;
+  color: grey;
+  border-bottom: 1px solid black;
+  
+
+  padding-bottom: 5px;
+  margin
+}
+@media (min-width: 768px) {
+nav {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-inline {
+  position: absolute;
+  top:0;
+  right: 15px;
+}
+
+.search-btn {
+  border: .5px solid black;
+  color: black;
+}
+
+.search-btn:hover {
+  background-color: black;
+} 
+
+}

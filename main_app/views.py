@@ -28,7 +28,6 @@ def about(request):
 def signup(request):
     error_message = ''
     if request.method == 'POST':
-
         form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
@@ -97,8 +96,7 @@ def searched_feed(request):
     products_by_tag = Product.objects.filter(tags__hashtag = search_input)
     products_by_creator = Product.objects.filter(user__username = search_input)
     products_by_name = Product.objects.filter(name = search_input)
-    
-   
+     
     print('Hitting searched_feed view func')
     return render(request, 'search/searched_products.html', { 
         'products_by_tag': products_by_tag,
@@ -110,7 +108,6 @@ def searched_feed(request):
 
 class ProductList(ListView): 
     model = Product
-
 
     def get_context_data(self, *args, **kwargs):
         context = super(ProductList, self).get_context_data(*args, **kwargs)
@@ -129,34 +126,22 @@ class ProductList(ListView):
         context['form'] = SearchForm()
         context['feed'] = feed
         return context
-        
-  
-   
-
-
-
-
 
     def get_queryset(self):
-        tags = self.request.GET.get('tags')
-        
+        tags = self.request.GET.get('tags') 
         if tags:
             return Product.objects.filter(tags = tags)
        
         else:
             return Product.objects.all()
 
-
-   
-    
+  
 class ProductCreate(LoginRequiredMixin,CreateView):
     model = Product
-    fields = ['name','caption', 'description', 'price', 'photo_file', 'tags']
-    
+    fields = ['name', 'description', 'price', 'photo_file', 'tags']
 
     def form_valid(self, form):
         photo_file = self.request.FILES.get('photo_file', None)
-        
         if photo_file:
             s3 = boto3.client('s3')
             # need a unique "key" for S3 / needs image file extension too
@@ -169,14 +154,11 @@ class ProductCreate(LoginRequiredMixin,CreateView):
                 print(f"S3 URL!!!!!!!:\n\n{url}\n\n")
             except Exception as e:
                 print('An error occurred uploading file to S3')
-                print(e)
-        
+                print(e)  
         form.instance.user = self.request.user
         #reassign photo_file field in the form to the s3 url
         form.instance.photo_file = url
-
         return super().form_valid(form)
-
 
 class ProductDetail(DetailView):
     model = Product
@@ -186,13 +168,9 @@ class ProductDetail(DetailView):
         context["comment_form"] = comment_form
         return context
 
-   
-    
-    
-
 class ProductUpdate(LoginRequiredMixin, UpdateView):
     model = Product
-    fields = ['caption', 'description', 'price', 'quantity','photo_file','tags'] #allowing quantity updates may cause problems later...
+    fields = ['name', 'description', 'price', 'quantity','photo_file','tags'] #allowing quantity updates may cause problems later...
 
 class ProductDelete(LoginRequiredMixin, DeleteView):
     model = Product

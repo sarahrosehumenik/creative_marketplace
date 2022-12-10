@@ -12,7 +12,7 @@ class Tag(models.Model):
     return self.hashtag
    
 class Product(models.Model):
-    name = models.CharField(max_length= 100)
+    name = models.CharField(max_length= 30)
     caption = models.CharField(max_length=140)
     description = models.TextField(max_length=2000) 
     price = models.IntegerField(default= 0)
@@ -34,7 +34,7 @@ class Product(models.Model):
 class Comment(models.Model):
    product = models.ForeignKey(Product, on_delete= models.CASCADE)
    user = models.ForeignKey(User, on_delete= models.CASCADE)
-   text = models.TextField(max_length=300)
+   text = models.CharField('', max_length=300)
    
 class Like(models.Model):
    product = models.ForeignKey(Product, on_delete= models.CASCADE)
