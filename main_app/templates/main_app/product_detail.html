@@ -8,7 +8,7 @@
                         <button type="button" class="btn btn-primary modal-btn" data-toggle="modal" data-target="#exampleModalCenter">
                                 <img class="modal-icon" src ="https://i.imgur.com/PRWi4TX.png">
                        </button>
-                       {{product.like.id}}
+                     
                 </div>
                 <div class="info-container">
                         <p class="detail-price">${{ product.price }}</p>
@@ -49,9 +49,6 @@
                                         </div>
                                 </div>
                         </div>
-
-
-
                 </div>
         </div>
 
@@ -66,11 +63,9 @@
                     <div class="modal-body">
                        <img class="modal-img" src="{{ product.photo_file }}"/> 
                     </div>
-                    
                   </div>
                 </div>
               </div>
-        
 </div>
 {% if user.id == product.user_id %}
 <a id="edit" href="{% url 'products_update' product.id %}">Edit</a>

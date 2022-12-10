@@ -5,56 +5,13 @@ body {
   padding: 0;
 }
 
-
-
-/* nav {
-  height: 65px;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  background-color: white;
-}
-
-.nav-link {
-  text-decoration: none;
-  color: black;
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 2vh;
-  font-weight: 700;
-  font-size: 15px;
-}
-
-.nav-link:hover {
-  color: rgb(59, 85, 79);
-} */
-
-/* 
-.search-input {
-  border: 1px solid black;
-  border-radius: 30px;
-  padding: 5px;
-}
-
-.search-btn {
-  background-color: black;
-  color: white;
-  border: none;
-  border-radius: 30px;
-  padding:5px;
-  cursor: pointer;
-}
-
-.search-btn:active {
-  transform: scale(0.95)
-} */
 main {
   height: 100%;
   width: 100%;
 }
 
 .product-container {
+  margin-top: 20px;
   height: 100%;
   width: 100%;
   display: flex;
@@ -64,11 +21,11 @@ main {
 }
 
 .product-card {
-position: relative;
-width: 250px;
-height: 360px;
-border-radius: 20px;
-margin: 1vh;
+  position: relative;
+  width: 320px;
+  height: 490px;
+  border-radius: 40px;
+  margin: 1vh;
 }
 
 .product-card:hover .cart-btn {
@@ -88,7 +45,7 @@ display: block;
 }
 
 .product-img {
- height: 85%;
+ height: 90%;
  width: 100%;
  object-fit: cover;
  border-radius: 20px;
@@ -96,13 +53,13 @@ display: block;
 
 .product-name {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 15px;
+  left: 15px;
   color: white;
   background-color: rgba(0, 0, 0,.7);
   padding: 3px;
   border-radius: 7px;
-  font-size: 15px;
+  font-size: 20px;
   font-family:'Times New Roman', Times, serif;
 }
 
@@ -112,22 +69,23 @@ display: block;
   left: 10px;
   font-family: Arial, Helvetica, sans-serif;
   color: black;
+  font-size:18px;
 }
 
 .cart-btn {
   position: absolute;
-  top: 50px;
-  left: 10px;
+  top: 60px;
+  left: 15px;
   color: rgb(12, 12, 12);
-  height: 30px;
   background-color: rgb(255, 255, 255);
   border-radius: 30px;
   border: none;
-  font-size: 12px ;
+  font-size: 13px ;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 700;
   display:none;
   cursor: pointer;
+  padding: 10px;
 }
 
 .cart-btn:active {
@@ -137,14 +95,14 @@ display: block;
 .comment-btn {
   position: absolute;
   bottom: 65px;
-  left: 10px;
+  left: 15px;
   text-decoration: none;
   color: white;
   background-color: black;
-  padding: 7px;
+  padding: 10px;
   border-radius: 30px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
+  font-size: 15px;
   display: none;
 }
 
@@ -154,13 +112,14 @@ display: block;
 
 .like-btn {
   position: absolute;
-  right: 10px;
+  right: 15px;
   bottom: 65px;
   font-family: Arial, Helvetica, sans-serif;
   border-radius: 30px;
+  font-size: 18px;
   border:none;
   display: none;
-  padding: 5px;
+  padding: 10px;
 }
 
 .like-btn:active {
@@ -169,15 +128,16 @@ display: block;
 
 .liked {
   position: absolute;
-  right: 10px;
-  bottom: 60px;
+  right: 15px;
+  bottom: 65px;
   font-family: Arial, Helvetica, sans-serif;
   border-radius: 30px;
   border: none;
   color: rgb(1, 1, 1);
   background-color: rgb(255, 255, 255);
   display: none;
-  padding:5px;
+  padding:10px;
+  font-size: 18px;
 }
 
 /* product list page and base html ^ */
@@ -237,8 +197,9 @@ display: block;
 
 .detail-card {
   height: 100%;
+  min-height: 600px;
   width: 95%;
-  max-width: 800px;
+  max-width: 1000px;
   display: flex;
   flex-direction: row;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 15px, rgba(17, 17, 26, 0.1) 0px 16px 45px, rgba(17, 17, 26, 0.1) 0px 24px 60px;
@@ -282,7 +243,7 @@ display: block;
 
 .detail-img {
  object-fit: contain;
- max-height: 550px;
+ max-height: 720px;
  width:100%;
  border-radius: 30px 0 0 30px;
 }
@@ -295,39 +256,34 @@ display: block;
 }
 
 .detail-price {
-  font-size: 20px;
+  font-size: 28px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 400;
   margin-top: 20px;
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
 
 .detail-title {
   font-family:Arial, Helvetica, sans-serif;
-  font-size: 40px;
+  font-size: 45px;
   margin: 0;
   font-weight: 400;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
   line-height: 1;
 }
 
 .detail-username {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
+  font-size: 18px;
   color: rgb(85, 85, 85);
 
 }
 
-.detail-caption {
-  font-family: Arial, Helvetica, sans-serif;
-  margin-top: 5px;
-  color: grey;
-  font-weight: 200;
-}
+
 
 .description-label {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
+  font-size: 19px;
   margin-top: 5px;
   margin-bottom: 0;
   font-weight: 600;
@@ -335,7 +291,7 @@ display: block;
 
 .detail-description {
   font-family:Georgia, 'Times New Roman', Times, serif;
-  font-size: 13px;
+  font-size: 18px;
   margin-top: 5px;
   width:98%;
   color: rgb(85, 85, 85);
@@ -356,18 +312,21 @@ display: block;
   color: rgb(0, 0, 0);
   margin-right: 10px;
   flex-wrap: wrap;
+  font-size: 18px;
 }
 
 .detail-cart-btn {
   position: absolute;
-  right: 15px;
-  top: 15px;
+  right: 20px;
+  top: 20px;
   color: rgb(255, 255, 255);
-  height: 30px;
+  height: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
   background-color: rgb(67, 60, 193);
   border-radius: 30px;
   border: none;
-  font-size: 12px ;
+  font-size: 15px ;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 700;
   cursor: pointer;
@@ -378,8 +337,8 @@ display: block;
 }
 
 .detail-comment-form {
-  margin-top: 50px;
-  width: 98%;
+  margin-top: 60px;
+  width: 100%;
   display:flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -390,10 +349,12 @@ display: block;
   height: 5vh;
   border-radius: 30px;
   border: .5px solid grey;
+  width: 30vh;
 }
 
 .detail-comment-btn {
   height: 5vh;
+  width: 10vh;
   border: none;
   text-decoration: none;
   color: white;
@@ -401,7 +362,7 @@ display: block;
   padding: 7px;
   border-radius: 30px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
+  font-size: 15px;
   cursor:pointer;
 }
 
@@ -412,30 +373,30 @@ display: block;
 
 #all-comments-btn {
   background: none;
-  border-radius:30px;
+  border-radius:35px;
   box-shadow: none;
-  margin-top:  10px;
+  margin-top:  20px;
+  border: .5px solid rgb(174, 174, 174);
 }
 
 #comment-section {
   border: none;
-  width: 290px;
+  width: 400px;
 }
 
 .comment-username {
 font-family: Arial, Helvetica, sans-serif;
-font-size: 12px;
+font-size: 15px;
 font-weight: 700;
 }
 
 .comment-text {
 font-family: Georgia, 'Times New Roman', Times, serif;
-font-size: 15px;
+font-size: 18px;
 }
 
 
 .modal-dialog {
-  
   width: 700px;
 }
 
