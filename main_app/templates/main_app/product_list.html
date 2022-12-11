@@ -4,8 +4,12 @@
 
 <div class="product-container">
 {% for item in feed %}
-         <div class="product-card">
+         <div class="product-card"> 
+            {% if user.is_authenticated %}
              <a href="{% url 'products_detail' item.product.id %}">
+                {% else %}
+                <a href="{% url 'login' %}">
+                    {% endif %}
                  <img class="product-img" src="{{ item.product.photo_file }}">
                  <p class="product-name">"{{ item.product.name }}"</p>
                  <!-- <p class="product-price">${{ item.product.price }} </p> -->
@@ -44,8 +48,8 @@
                 </form>
                 {% endif %}
             {% endif %}
+        </div>
         {% endif %}
-    </div>
 </div>
 {% endfor %}
 </div>
