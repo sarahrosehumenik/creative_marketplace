@@ -2,28 +2,42 @@
 
 {% block content %} 
 
-<div id="post">
+<div id="post-product-container">
     {% if object %} 
-       <h1>Edit {{ object.name }}</h1>
+       <h1 class="product-form-header">Edit {{ object.name }}</h1>
     {% else %}
-        <h1>Add Product</h1>
+        <h1 class="product-form-header">Add Product</h1>
     {% endif %}
-
-    <form 
-    id="productform" 
+  <div class="product-form-container">
+    <form
+    class="product-form"
     action="" 
     enctype="multipart/form-data" 
     method="POST">
       {% csrf_token %}
-      {{ form.as_table }}
-      <p>To select multiple hashtags, hold "control" or "alt" and select which ones you'd like!
+      
+ 
+     <div class="form-group">
+       <label for="id_name">Name</label>
+      {{ form.name }}
+      <label for="id_price">Price</label>
+      {{form.price}}
+      <label for="id_description">description</label>
+      {{form.description}}
+      <label for="file_upload_button">Photo  </label>
+      {{form.photo_file}}
+    
+      {{form.tags}}
+      <p class="form-text">To select multiple hashtags, hold "command" or "alt" and select which ones you'd like!
       </p>
       <input 
-      id="productbutt" 
       type="submit" 
       value="Submit!" 
       class="btn">
     </form>
+        
+    </div>
+  </div>
   </div>
     
 {% endblock %}

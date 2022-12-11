@@ -1,4 +1,4 @@
-from django.forms import ModelForm, ChoiceField
+from django.forms import ModelForm, ChoiceField, forms
 from .models import Comment, Product, Tag
  
 class CommentForm(ModelForm):
@@ -15,4 +15,4 @@ class SearchForm(ModelForm):
     self.fields['tags'].required = False
    
 
-
+  
