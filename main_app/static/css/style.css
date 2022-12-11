@@ -158,6 +158,7 @@ display: block;
 }
 
 /* product list page and base html ^ */
+
 /* cart  */
 
 .cart-title {
@@ -172,13 +173,11 @@ display: block;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
 }
 
 .empty-link {
   color:rgb(67, 60, 193);
 }
-
 
 .remove-btn {
   position: absolute;
@@ -423,6 +422,13 @@ font-size: 18px;
 
 /* profile */
 
+.profile-header {
+  width: 100%;
+  background-color:rgb(213, 213, 213);
+  padding: 5px;
+  margin-bottom: 1vh;
+
+}
 .profile-user{
   text-align: center;
   font-size: 30px;
@@ -436,16 +442,17 @@ font-size: 18px;
   margin: auto;
   height: 60px;
   width: 60px;
-  background-color: grey;
+  background-color: rgb(234, 255, 0);
   border-radius: 50%;
-  margin-bottom: 5vh;
+  margin-bottom: 1vh;
+  
 }
 
 .avatar-char {
   text-align: center;
   font-size: 45px;
   margin-top: 5px;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .like-header {
