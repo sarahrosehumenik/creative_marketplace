@@ -1,22 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
-<div id="post">
-<h1>Log In</h1>
+<div class="login-container">
+<h1 class="login-header">Log In</h1>
 
 <!-- Add the login form -->
-<form id="login" method="post" action="{% url 'login' %}">
+<div class="login-form-container">
+<form class="login-form" method="post" action="{% url 'login' %}">
   {% csrf_token %}
-  {{ form.as_p }}
+  <div class="form-group inner-login">
+    <label class="login-label" for="id_username">Username</label>
+  {{ form.username }}
+  <label class="login-label" for="id_password">Password</label>
+  {{ form.password }}
   <input 
-  id="loginbutt" 
+  
   type="submit" 
-  class="btn" 
+  class="btn login-btn" 
   value="login">
   <input 
   type="hidden" 
   name="next" 
   value="{{ next }}">
+</div>
 </form>
+</div>
 </div>
 {% endblock %}
 

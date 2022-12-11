@@ -4,3 +4,6 @@
  document.querySelector("select#id_tags").className = "form-control product-input"
  document.querySelector("input#file_upload_button").className = "form-control-file product-input"
  document.querySelector("input#id_photo_file").className = "form-control-file product-input"
+
+ document.querySelector("input#id_username").className = "form-control login-input"
+ document.querySelector("input#id_password").className = "form-control login-input"
