@@ -7,3 +7,4 @@
 
  document.querySelector("input#id_username").className = "form-control login-input"
  document.querySelector("input#id_password").className = "form-control login-input"
+ document.querySelector("input#id_password2").className = "form-control login-input"

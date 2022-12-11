@@ -1,22 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
-<div id="post">
-<h1>Sign Up</h1>
+<div class="signup-container">
+<h class="signup-header">Sign Up</h>
 
 {% if error_message %}
-<p class="red-text">{{ error_message }}</p>
+<p>{{ error_message }}</p>
 {% endif %}
-
-<form id="signup" method="post" action="{% url 'signup' %}">
+<div class="signup-form-container">
+<form class="signup-form" method="post" action="{% url 'signup' %}">
   {% csrf_token %}
-  {{ form.as_p }}
+  <div class="form-group inner-signup">
+  {{ form }}
   <input 
-  id="signupbutt" 
+  
   type="submit" 
-  class="btn" 
+  class="btn signup-btn" 
   value="signup">
+</div>
 </form>
 </div>
+</div>
+
 <script>
   const span = document.querySelector("span")
   const formText = document.querySelector('.helptext')

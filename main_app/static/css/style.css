@@ -167,8 +167,12 @@ display: block;
 .empty-message {
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
-  margin: 5vh auto;
+  margin: 10vh auto;
   font-size: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
 }
 
 .empty-link {
@@ -188,7 +192,6 @@ display: block;
   font-size: 12px ;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 700;
-  display:none;
   cursor: pointer;
 }
 
@@ -196,9 +199,7 @@ display: block;
   transform: scale(0.95);
 }
 
-.product-card:hover .remove-btn {
-  display: block;
-}
+
 
 /* detail */
 
@@ -412,7 +413,6 @@ font-family: Georgia, 'Times New Roman', Times, serif;
 font-size: 18px;
 }
 
-
 .modal-dialog {
   width: 700px;
 }
@@ -460,7 +460,7 @@ font-size: 18px;
 .product-form-header {
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 30px;
+  font-size: 25px;
   margin-top: 2vh;
 }
 
@@ -468,9 +468,8 @@ font-size: 18px;
   display: flex;
   justify-content: center;
   flex-direction: column;
-
-  
 }
+
 .product-form-container {
   height: 100%;
   width: 90%;
@@ -480,6 +479,7 @@ font-size: 18px;
   padding: 30px;
   border-radius: 30px;
 }
+
 .product-form {
   display: flex;
   justify-content: space-between;
@@ -503,7 +503,7 @@ input#id_photo_file {
 .login-header {
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 30px;
+  font-size: 25px;
   margin-top: 2vh;
 }
 
@@ -537,9 +537,62 @@ input#id_photo_file {
 }
 
 
+/* sign up */
+.signup-header {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  margin-top: 2vh;
+}
 
+.signup-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 
+.signup-form-container {
+  height: 100%;
+  width: 90%;
+  max-width: 500px;
+  margin: 5vh auto;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 15px, rgba(17, 17, 26, 0.1) 0px 16px 45px, rgba(17, 17, 26, 0.1) 0px 24px 60px;
+  padding: 30px;
+  border-radius: 30px;
+}
 
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+ .inner-signup {
+  display: flex;
+  flex-direction: column;
+}
+
+.helptext {
+  text-align: left;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.helptext > ul {
+  margin-left: 0;
+  padding-left: 0;
+
+}
+
+.signup-btn {
+  margin-top: 2vh;
+}
+
+::marker {
+  content: "";
+}
 
 
 
