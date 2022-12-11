@@ -12,7 +12,7 @@ class Tag(models.Model):
     return self.hashtag
    
 class Product(models.Model):
-    name = models.CharField(max_length= 30)
+    name = models.CharField(max_length= 27)
     caption = models.CharField(max_length=140)
     description = models.TextField(max_length=2000) 
     price = models.IntegerField(default= 0)
