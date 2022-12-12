@@ -164,6 +164,8 @@ display: block;
 .cart-title {
   text-align: center;
   font-family:Arial, Helvetica, sans-serif;
+  background-color:rgb(63, 79, 78);
+  color: white;
 }
 .empty-message {
   font-family: Arial, Helvetica, sans-serif;
@@ -181,14 +183,14 @@ display: block;
 
 .remove-btn {
   position: absolute;
-  bottom: 10px;
-  /* left: 10px; */
-  color: rgb(255, 255, 255);
-  height: 30px;
-  background-color: rgb(189, 0, 0);
+  bottom: 65px;
+  left: 15px;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
   border-radius: 30px;
   border: none;
-  font-size: 12px ;
+  font-size: 15px ;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 700;
   cursor: pointer;
@@ -198,6 +200,10 @@ display: block;
   transform: scale(0.95);
 }
 
+.remove-btn:hover {
+  background-color: rgb(235, 17, 17);
+  
+}
 
 
 /* detail */

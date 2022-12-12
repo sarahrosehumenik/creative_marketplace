@@ -27,6 +27,7 @@
 {% endfor %}
 </div>
 {% else %}
+    <h1 class="cart-title">Cart</h1>
     <h1 class="empty-message">{{user.username}}, Your cart is empty...<a class="empty-link" href="{% url 'products_index' %}">Continue Shopping</a></h1>
 {% endif %}
 
