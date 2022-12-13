@@ -24,12 +24,15 @@ class Product(models.Model):
     stripe_price_id = models.CharField(max_length=100, blank=True, default='')
     #product creator field
     user = models.ForeignKey(User, on_delete= models.CASCADE)
+   
+   
 
     def get_absolute_url(self):
        return reverse('products_index')
 
     def __str__(self):
        return self.name
+   
 
 class Comment(models.Model):
    product = models.ForeignKey(Product, on_delete= models.CASCADE)
