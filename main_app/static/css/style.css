@@ -811,6 +811,21 @@ width: 100%;
   color: white;
 }
 
+/* cancel and success */
+
+.cancel-text {
+  text-align: center;
+  font-size: 25px;
+  margin: 5vh auto;
+}
+
+.success-text {
+  text-align: center;
+  font-size: 20px;
+  margin: 5vh auto;
+  line-break: auto;
+}
+
 @media (min-width: 768px) {
 nav {
   background-color: white;
