@@ -499,6 +499,10 @@ color: grey;
  .detail-hashtag {
    margin: 5px auto;
  }
+ #comment-section {
+
+  width: 200px;
+}
 }
 /* profile */
 
