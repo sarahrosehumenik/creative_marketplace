@@ -157,6 +157,8 @@ display: block;
   font-size: 18px;
 }
 
+
+
 /* product list page and base html ^ */
 
 /* cart  */
@@ -837,7 +839,21 @@ width: 100%;
   margin: 5vh auto;
   line-break: auto;
 }
+@media (max-width: 650px) {
+  .cart-btn {
+    display: block;
+  }
+  .comment-btn {
+    display:block;
+  }
+  .like-btn {
+    display: block;
+  }
+  .liked {
+    display: block;
+  }
 
+}
 @media (min-width: 768px) {
 nav {
   background-color: white;
@@ -866,6 +882,9 @@ nav {
 .search-btn:hover {
   background-color: black;
 } 
+
+
+
 
 }
 
