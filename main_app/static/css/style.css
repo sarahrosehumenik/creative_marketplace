@@ -361,33 +361,28 @@ display: block;
 }
 
 .detail-comment-form {
-  margin-top: 60px;
-  width: 100%;
+  margin-top: 50px;
+  width: 95%;
+  height: 40px;
   display:flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  grid-gap: 10%;
+  justify-content: center;
+  
 }
 
-.detail-comment-form > p > input[type="text" i] {
-  width: 100%;
-  height: 5vh;
+.detail-comment-form >  input[type="text" i] {
+  width: 90%;
+  height: 100%;
   border-radius: 30px;
   border: .5px solid grey;
-  width: 30vh;
+  
 }
 
-.detail-comment-btn {
-  height: 5vh;
-  width: 10vh;
-  border: none;
-  text-decoration: none;
-  color: white;
+.post-comment-btn {
   background-color: black;
-  padding: 7px;
+  color: white;
   border-radius: 30px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  cursor:pointer;
 }
 
 .detail-comment-btn:active {
@@ -399,7 +394,7 @@ display: block;
   background: none;
   border-radius:35px;
   box-shadow: none;
-  margin-top:  20px;
+  margin-top:  30px;
   border: .5px solid rgb(174, 174, 174);
 }
 

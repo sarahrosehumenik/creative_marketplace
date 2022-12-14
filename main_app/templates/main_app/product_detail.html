@@ -32,8 +32,8 @@
                         <form class="detail-comment-form" action="{% url 'add_comment' product.id user.id %}"
                                 method="POST">
                                 {% csrf_token %}
-                                {{ comment_form.as_p }}
-                                <input class="detail-comment-btn" type="submit" value="Comment">
+                                {{ comment_form }}
+                                <input class="btn post-comment-btn" type="submit" value="Comment">
                         </form>
 
                         <button id="all-comments-btn" class="btn btn-light" type="button" data-toggle="collapse"
