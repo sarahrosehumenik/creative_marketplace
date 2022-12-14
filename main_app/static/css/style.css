@@ -840,6 +840,9 @@ width: 100%;
   line-break: auto;
 }
 @media (max-width: 650px) {
+  .product-name {
+    background-color: black;
+  }
   .cart-btn {
     display: block;
   }
