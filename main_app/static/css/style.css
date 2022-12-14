@@ -496,6 +496,7 @@ color: grey;
    flex-direction: column;
    align-items: center;
    max-width: 100%;
+   position: relative;
  }
 
  .detail-title {
@@ -514,8 +515,16 @@ color: grey;
 }
 
  #comment-section {
-  min-width: 250px;
- }
+   display: flex;
+   flex-direction: column;
+  margin: 0;
+  width: 100%;
+  
+}
+.comment-container {
+  margin:0;
+
+}
 }
 /* profile */
 
