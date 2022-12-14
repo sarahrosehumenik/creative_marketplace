@@ -692,23 +692,23 @@ input#id_photo_file {
   flex-direction: row;
   width:90%;
   height: 100%;
-  margin: 3vh auto;
+  margin: 5vh auto;
   grid-gap: 10%;
-
 }
+
 .about-text {
   width: 50%;
   height: 100%;
   display:flex;
- 
   flex-direction: column;
   justify-content: center;
 }
+
 .about-header {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
-
 }
+
 .about-descript {
 font-family:Arial, Helvetica, sans-serif;
 }
@@ -717,11 +717,6 @@ font-family:Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
   width: 50%;
- 
- 
-
-  
-
 }
 
 .color-block {
@@ -778,6 +773,23 @@ width: 100%;
   width: 100%;
 }
 
+@media (max-width: 620px) {
+  .about-container {
+    flex-direction: column;
+  }
+
+  .about-image-container {
+    display: none;
+  }
+
+  .about-text {
+    width: 100%;
+  }
+
+  .about-header {
+    background-color: rgb(221, 255, 0);
+  }
+}
 /* confirm delete */
 .delete-container {
   margin-top: 2vh;
