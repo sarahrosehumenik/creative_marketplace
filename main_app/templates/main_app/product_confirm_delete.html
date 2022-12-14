@@ -2,19 +2,18 @@
 {% block content %}
 
 
-<div id="delete-container">
-   <h1>Delete Product</h1>
+<div class="delete-container">
+   <h1 class="delete-header">Delete </h1>
    <p>Are you sure you want to delete "{{ object.name }}"?
    </p>
   <form action="" method="POST">
     {% csrf_token %}
     <input 
-    id="yes-delete" 
     type="submit" 
     value="Yes - Delete!" 
-    class="btn">
+    class="btn delete-btn">
   </form>
-  <a href="{% url 'products_detail' product.id %}">Cancel</a>
+  <a  href="{% url 'products_detail' product.id %}"><button class="btn cancel-btn">Cancel</button></a>
 </div>
 
 {% endblock %}

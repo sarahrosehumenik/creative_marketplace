@@ -70,8 +70,10 @@
               </div>
 </div>
 {% if user.id == product.user_id %}
-<a id="edit" href="{% url 'products_update' product.id %}">Edit</a>
-<a id="delete" href="{% url 'products_delete' product.id %}">Delete</a>
+<div class="edit-delete-container">
+  <a class="edit-link" href="{% url 'products_update' product.id %}">Edit</a>
+  <a class="delete-link" href="{% url 'products_delete' product.id %}">Delete</a>
+</div>
 {% endif %}
 
 
