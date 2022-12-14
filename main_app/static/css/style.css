@@ -775,6 +775,7 @@ width: 100%;
 
 @media (max-width: 620px) {
   .about-container {
+    margin-top: 1vh;
     flex-direction: column;
   }
 
